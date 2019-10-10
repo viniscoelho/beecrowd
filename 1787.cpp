@@ -1,12 +1,12 @@
-#include <iostream>
 #include <algorithm>
+#include <climits>
 #include <cmath>
-#include <vector>
+#include <cstring>
+#include <iostream>
+#include <map>
 #include <queue>
 #include <stack>
-#include <map>
-#include <cstring>
-#include <climits>
+#include <vector>
 
 using namespace std;
 
@@ -23,12 +23,10 @@ int main()
     int p, t[3];
     int a, b, c;
 
-    while (cin >> p && p)
-    {
+    while (cin >> p && p) {
         memset(t, 0, sizeof t);
         int m;
-        for (int i = 0; i < p; i++)
-        {
+        for (int i = 0; i < p; i++) {
             cin >> a >> b >> c;
             m = max(a, max(b, c));
             if (isPowerOfTwo(a))

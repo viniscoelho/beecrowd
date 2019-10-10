@@ -1,26 +1,26 @@
-#include <iostream>
 #include <algorithm>
-#include <functional>
-#include <locale>
-#include <map>
-#include <set>
-#include <list>
-#include <stack>
-#include <cmath>
-#include <queue>
-#include <ctime>
-#include <cfloat>
-#include <vector>
-#include <string>
-#include <cstdio>
 #include <bitset>
+#include <cassert>
+#include <cfloat>
 #include <climits>
+#include <cmath>
+#include <cstdio>
 #include <cstdlib>
 #include <cstring>
-#include <cassert>
+#include <ctime>
+#include <functional>
 #include <iomanip>
+#include <iostream>
+#include <list>
+#include <locale>
+#include <map>
+#include <queue>
+#include <set>
 #include <sstream>
+#include <stack>
+#include <string>
 #include <utility>
+#include <vector>
 #define FOR(i, a, b) for (int i = a; i <= b; ++i)
 #define RFOR(i, b, a) for (int i = b; i >= a; --i)
 #define REP(i, N) for (int i = 0; i < N; ++i)
@@ -46,8 +46,7 @@ int readInt()
     bool minus = false;
     int result = 0;
     char ch = getchar_unlocked();
-    while (true)
-    {
+    while (true) {
         if (ch == '-')
             break;
         if (ch >= '0' && ch <= '9')
@@ -58,8 +57,7 @@ int readInt()
         minus = true;
     else
         result = ch - '0';
-    while (true)
-    {
+    while (true) {
         ch = getchar_unlocked();
         if (ch < '0' || ch > '9')
             break;
@@ -76,15 +74,12 @@ int matrix[MAX][MAX];
 int main()
 {
     int m, n;
-    while (scanf("%d %d", &m, &n) && m + n)
-    {
-        int cond[] = {1, 1, 1, 1};
+    while (scanf("%d %d", &m, &n) && m + n) {
+        int cond[] = { 1, 1, 1, 1 };
 
-        for (int i = 0; i < m; i++)
-        {
+        for (int i = 0; i < m; i++) {
             int a = 0, b = 0;
-            for (int j = 0; j < n; j++)
-            {
+            for (int j = 0; j < n; j++) {
                 matrix[i][j] = readInt();
                 a += matrix[i][j];
                 b |= matrix[i][j];
@@ -93,11 +88,9 @@ int main()
                 cond[0] = 0;
             cond[3] &= b;
         }
-        for (int j = 0; j < n; j++)
-        {
+        for (int j = 0; j < n; j++) {
             int a = 0, b = 1;
-            for (int i = 0; i < m; i++)
-            {
+            for (int i = 0; i < m; i++) {
                 a |= matrix[i][j];
                 b &= matrix[i][j];
             }

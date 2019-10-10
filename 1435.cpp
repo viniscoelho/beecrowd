@@ -11,13 +11,10 @@ int main()
 {
     ios::sync_with_stdio(false);
     int a;
-    while (cin >> a && a)
-    {
+    while (cin >> a && a) {
         int b = 0, c = a, count = 1;
-        for (int i = 0; i < a; i++)
-        {
-            for (int j = b; j < c; j++)
-            {
+        for (int i = 0; i < a; i++) {
+            for (int j = b; j < c; j++) {
                 for (int k = j; k < c; k++)
                     matrix[j][k] = matrix[k][j] = count;
                 matrix[j][j] = count;
@@ -25,8 +22,7 @@ int main()
             b++, c--, count++;
         }
 
-        for (int j = 0; j < a; j++)
-        {
+        for (int j = 0; j < a; j++) {
             for (int k = 0; k < a; k++)
                 cout << ((k > 0) ? " " : "") << setw(3) << matrix[k][j];
             cout << "\n";

@@ -6,11 +6,11 @@
 		esses numeros
 */
 
-#include <iostream>
 #include <algorithm>
-#include <vector>
 #include <cstdio>
 #include <cstring>
+#include <iostream>
+#include <vector>
 #define pb push_back
 
 using namespace std;
@@ -19,20 +19,18 @@ typedef long long ll;
 
 int main()
 {
-	int n;
-	scanf("%d", &n);
-	getchar();
-	char perm[20];
-	while (n--)
-	{
-		scanf(" %[^\n]", perm);
-		int tam = strlen(perm);
-		sort(perm, perm + tam);
-		do
-		{
-			puts(perm);
-		} while (next_permutation(perm, perm + tam));
-		printf("\n");
-	}
-	return 0;
+    int n;
+    scanf("%d", &n);
+    getchar();
+    char perm[20];
+    while (n--) {
+        scanf(" %[^\n]", perm);
+        int tam = strlen(perm);
+        sort(perm, perm + tam);
+        do {
+            puts(perm);
+        } while (next_permutation(perm, perm + tam));
+        printf("\n");
+    }
+    return 0;
 }

@@ -20,21 +20,19 @@ char *p, a, word[MAXN];
 
 int main()
 {
-	int t;
-	scanf("%d", &t);
-	getchar();
-	while (t--)
-	{
-		scanf(" %[^\n]", word);
-		p = strtok(word, " ");
-		int ans = 0, cont = 0;
-		while (p != NULL)
-		{
-			char a = *p;
-			printf("%c", a);
-			p = strtok(NULL, " ");
-		}
-		printf("\n");
-	}
-	return 0;
+    int t;
+    scanf("%d", &t);
+    getchar();
+    while (t--) {
+        scanf(" %[^\n]", word);
+        p = strtok(word, " ");
+        int ans = 0, cont = 0;
+        while (p != NULL) {
+            char a = *p;
+            printf("%c", a);
+            p = strtok(NULL, " ");
+        }
+        printf("\n");
+    }
+    return 0;
 }

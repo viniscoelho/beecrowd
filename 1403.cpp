@@ -16,34 +16,32 @@ typedef vector<int> vi;
 
 int main()
 {
-	ios::sync_with_stdio(false);
-	int m, n, x;
-	while (cin >> m >> n && m + n)
-	{
-		unordered_map<int, int> grandpa;
-		unordered_map<int, int>::iterator it;
-		REP(i, m)
-		{
-			REP(j, n)
-			{
-				cin >> x;
-				if (!grandpa.count(x))
-					grandpa.insert(mp(x, 1));
-				else
-					grandpa[x]++;
-			}
-		}
-		priority_queue<ii> resp;
-		for (it = grandpa.begin(); it != grandpa.end(); ++it)
-			resp.push(mp(it->second, -it->first));
-		resp.pop();
-		int maior = resp.top().first;
-		while (!resp.empty() && resp.top().first == maior)
-		{
-			cout << -resp.top().second << " ";
-			resp.pop();
-		}
-		cout << "\n";
-	}
-	return 0;
+    ios::sync_with_stdio(false);
+    int m, n, x;
+    while (cin >> m >> n && m + n) {
+        unordered_map<int, int> grandpa;
+        unordered_map<int, int>::iterator it;
+        REP(i, m)
+        {
+            REP(j, n)
+            {
+                cin >> x;
+                if (!grandpa.count(x))
+                    grandpa.insert(mp(x, 1));
+                else
+                    grandpa[x]++;
+            }
+        }
+        priority_queue<ii> resp;
+        for (it = grandpa.begin(); it != grandpa.end(); ++it)
+            resp.push(mp(it->second, -it->first));
+        resp.pop();
+        int maior = resp.top().first;
+        while (!resp.empty() && resp.top().first == maior) {
+            cout << -resp.top().second << " ";
+            resp.pop();
+        }
+        cout << "\n";
+    }
+    return 0;
 }

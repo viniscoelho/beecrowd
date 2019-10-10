@@ -1,15 +1,15 @@
-#include <iostream>
-#include <cstdlib>
-#include <cmath>
-#include <climits>
-#include <string>
-#include <cstring>
-#include <vector>
 #include <algorithm>
+#include <climits>
+#include <cmath>
+#include <cstdlib>
+#include <cstring>
+#include <iostream>
 #include <list>
-#include <set>
-#include <queue>
 #include <map>
+#include <queue>
+#include <set>
+#include <string>
+#include <vector>
 #define mp make_pair
 #define pb push_back
 #define MAXV 200100
@@ -26,8 +26,7 @@ int main()
     int n, x;
     cin >> n;
     int sum = 0;
-    for (int i = 0; i < n; i++)
-    {
+    for (int i = 0; i < n; i++) {
         cin >> x;
         sum += x;
     }

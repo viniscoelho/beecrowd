@@ -1,27 +1,27 @@
-#include <iostream>
 #include <algorithm>
-#include <functional>
-#include <locale>
-#include <map>
-#include <set>
-#include <list>
-#include <stack>
-#include <cmath>
-#include <queue>
-#include <ctime>
-#include <cfloat>
-#include <vector>
-#include <string>
-#include <cstdio>
 #include <bitset>
+#include <cassert>
+#include <cfloat>
 #include <climits>
+#include <cmath>
+#include <cstdio>
 #include <cstdlib>
 #include <cstring>
-#include <cassert>
+#include <ctime>
+#include <functional>
 #include <iomanip>
+#include <iostream>
+#include <list>
+#include <locale>
+#include <map>
+#include <queue>
+#include <set>
 #include <sstream>
-#include <utility>
+#include <stack>
+#include <string>
 #include <unordered_map>
+#include <utility>
+#include <vector>
 #define FOR(i, a, b) for (int i = a; i <= b; ++i)
 #define RFOR(i, b, a) for (int i = b; i >= a; --i)
 #define REP(i, N) for (int i = 0; i < N; ++i)
@@ -46,34 +46,28 @@ int main()
     unordered_map<string, string> bib;
     cin >> l >> n;
     string a, b;
-    while (l--)
-    {
+    while (l--) {
         cin >> a >> b;
         bib.insert(mp(a, b));
     }
-    while (n--)
-    {
+    while (n--) {
         cin >> a;
         if (bib.count(a))
             cout << bib[a] << "\n";
-        else
-        {
+        else {
             int s = a.size();
-            switch (a[s - 1])
-            {
+            switch (a[s - 1]) {
             case 'o':
             case 's':
             case 'x':
                 cout << a << "es\n";
                 break;
-            case 'h':
-            {
+            case 'h': {
                 if (s - 2 >= 0 && (a[s - 2] == 's' || a[s - 2] == 'c'))
                     cout << a << "es\n";
                 else
                     cout << a << "s\n";
-            }
-            break;
+            } break;
             case 'y':
                 if (s - 2 >= 0 && (a[s - 2] != 'a' && a[s - 2] != 'e' && a[s - 2] != 'i' && a[s - 2] != 'o' && a[s - 2] != 'u'))
                     cout << a.substr(0, s - 1) << "ies\n";

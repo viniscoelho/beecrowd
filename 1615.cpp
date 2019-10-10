@@ -17,8 +17,7 @@ int readInt()
     int result = 0;
     char ch;
     ch = getchar_unlocked();
-    while (true)
-    {
+    while (true) {
         if (ch == '-')
             break;
         if (ch >= '0' && ch <= '9')
@@ -29,8 +28,7 @@ int readInt()
         minus = true;
     else
         result = ch - '0';
-    while (true)
-    {
+    while (true) {
         ch = getchar_unlocked();
         if (ch < '0' || ch > '9')
             break;
@@ -47,13 +45,11 @@ int main()
     ios::sync_with_stdio(false);
     int a, b, c, t;
     t = readInt();
-    while (t--)
-    {
+    while (t--) {
         a = readInt();
         b = readInt();
         unordered_map<int, int> election;
-        for (int i = 0; i < b; i++)
-        {
+        for (int i = 0; i < b; i++) {
             c = readInt();
             if (election.count(c))
                 election[c]++;
@@ -62,10 +58,8 @@ int main()
         }
         unordered_map<int, int>::iterator it;
         int winner = 0, count = 0;
-        for (it = election.begin(); it != election.end(); it++)
-        {
-            if (it->second > count)
-            {
+        for (it = election.begin(); it != election.end(); it++) {
+            if (it->second > count) {
                 count = it->second;
                 winner = it->first;
             }

@@ -12,13 +12,10 @@ int main()
     ios::sync_with_stdio(false);
     int a;
 
-    while (cin >> a && a)
-    {
+    while (cin >> a && a) {
         int resp = 0;
-        for (int i = 0; i < a; i++)
-        {
-            for (int j = 0; j < a; j++)
-            {
+        for (int i = 0; i < a; i++) {
+            for (int j = 0; j < a; j++) {
                 if (i == j)
                     resp = 1;
                 else

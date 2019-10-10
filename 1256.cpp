@@ -16,26 +16,25 @@ typedef pair<int, int> ii;
 
 int main()
 {
-	int h, k, n, num, t = 0;
-	scanf("%d", &k);
-	while (k--)
-	{
-		if (t++)
-			printf("\n");
-		scanf("%d %d", &h, &n);
-		vector<list<int>> hashT(h);
-		REP(i, n)
-		{
-			scanf("%d", &num);
-			hashT[num % h].pb(num);
-		}
-		REP(i, h)
-		{
-			printf("%d -> ", i);
-			REPIT(it, hashT[i])
-			printf("%d -> ", *it);
-			printf("\\\n");
-		}
-	}
-	return 0;
+    int h, k, n, num, t = 0;
+    scanf("%d", &k);
+    while (k--) {
+        if (t++)
+            printf("\n");
+        scanf("%d %d", &h, &n);
+        vector<list<int>> hashT(h);
+        REP(i, n)
+        {
+            scanf("%d", &num);
+            hashT[num % h].pb(num);
+        }
+        REP(i, h)
+        {
+            printf("%d -> ", i);
+            REPIT(it, hashT[i])
+            printf("%d -> ", *it);
+            printf("\\\n");
+        }
+    }
+    return 0;
 }

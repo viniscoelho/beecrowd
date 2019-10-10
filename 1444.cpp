@@ -1,11 +1,11 @@
-#include <iostream>
-#include <cmath>
 #include <algorithm>
-#include <map>
-#include <stack>
-#include <queue>
-#include <vector>
+#include <cmath>
 #include <iomanip>
+#include <iostream>
+#include <map>
+#include <queue>
+#include <stack>
+#include <vector>
 #define pb push_back
 #define mp make_pair
 
@@ -17,23 +17,21 @@ char matrix[60][60];
 
 int drakes(double a)
 {
-	int val = 0;
-	while (a != 1.0)
-	{
-		val += ceil(a / 3.0);
-		a = ceil(a / 3.0);
-	}
+    int val = 0;
+    while (a != 1.0) {
+        val += ceil(a / 3.0);
+        a = ceil(a / 3.0);
+    }
 
-	return val;
+    return val;
 }
 
 int main()
 {
-	ios::sync_with_stdio(false);
-	double a;
-	while (cin >> a && a)
-	{
-		cout << drakes(a) << endl;
-	}
-	return 0;
+    ios::sync_with_stdio(false);
+    double a;
+    while (cin >> a && a) {
+        cout << drakes(a) << endl;
+    }
+    return 0;
 }

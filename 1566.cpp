@@ -17,8 +17,7 @@ int readInt()
     int result = 0;
     char ch;
     ch = getchar_unlocked();
-    while (true)
-    {
+    while (true) {
         if (ch == '-')
             break;
         if (ch >= '0' && ch <= '9')
@@ -29,8 +28,7 @@ int readInt()
         minus = true;
     else
         result = ch - '0';
-    while (true)
-    {
+    while (true) {
         ch = getchar_unlocked();
         if (ch < '0' || ch > '9')
             break;
@@ -46,12 +44,10 @@ int main()
 {
     int n, e;
     scanf("%d", &n);
-    while (n--)
-    {
+    while (n--) {
         scanf("%d", &e);
         vector<int> h;
-        for (int i = 0; i < e; i++)
-        {
+        for (int i = 0; i < e; i++) {
             h.pb(readInt());
         }
         sort(h.begin(), h.end());

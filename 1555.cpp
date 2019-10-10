@@ -1,15 +1,15 @@
-#include <iostream>
-#include <iomanip>
-#include <cstdlib>
-#include <cmath>
+#include <algorithm>
 #include <climits>
+#include <cmath>
+#include <cstdlib>
+#include <iomanip>
+#include <iostream>
+#include <list>
+#include <map>
+#include <queue>
+#include <set>
 #include <string>
 #include <vector>
-#include <algorithm>
-#include <list>
-#include <set>
-#include <queue>
-#include <map>
 #define mp make_pair
 #define pb push_back
 #define MAXV 200100
@@ -52,8 +52,7 @@ int main()
     ios::sync_with_stdio(false);
     int t, n, p, x, y;
     cin >> t;
-    for (int i = 1; i <= t; i++)
-    {
+    for (int i = 1; i <= t; i++) {
         cin >> x >> y;
         getWinner(x, y);
     }

@@ -15,25 +15,23 @@ char comm[100];
 
 int main()
 {
-	int a, s, t;
-	scanf("%d", &t);
-	while (t--)
-	{
-		vi res;
-		scanf("%d", &s);
-		while (s--)
-		{
-			scanf("%d", &a);
-			res.pb(a);
-		}
-		scanf(" %s", &comm);
-		int resp = 0;
-		for (int i = 0; i < strlen(comm); ++i)
-			if (comm[i] == 'S' && res[i] <= 2)
-				resp++;
-			else if (comm[i] == 'J' && res[i] > 2)
-				resp++;
-		printf("%d\n", resp);
-	}
-	return 0;
+    int a, s, t;
+    scanf("%d", &t);
+    while (t--) {
+        vi res;
+        scanf("%d", &s);
+        while (s--) {
+            scanf("%d", &a);
+            res.pb(a);
+        }
+        scanf(" %s", &comm);
+        int resp = 0;
+        for (int i = 0; i < strlen(comm); ++i)
+            if (comm[i] == 'S' && res[i] <= 2)
+                resp++;
+            else if (comm[i] == 'J' && res[i] > 2)
+                resp++;
+        printf("%d\n", resp);
+    }
+    return 0;
 }

@@ -1,15 +1,15 @@
-#include <iostream>
-#include <cmath>
-#include <string>
-#include <vector>
 #include <algorithm>
-#include <list>
-#include <set>
-#include <queue>
-#include <map>
+#include <cmath>
+#include <cstdio>
 #include <cstdlib>
 #include <cstring>
-#include <cstdio>
+#include <iostream>
+#include <list>
+#include <map>
+#include <queue>
+#include <set>
+#include <string>
+#include <vector>
 #define mp make_pair
 #define pb push_back
 #define MAXV 100100
@@ -20,10 +20,13 @@ typedef vector<int> vi;
 typedef pair<int, string> is;
 typedef unsigned long long int64;
 
-struct node
-{
+struct node {
     int64 to, cost;
-    node(int64 to = 0, int64 cost = 0) : to(to), cost(cost) {}
+    node(int64 to = 0, int64 cost = 0)
+        : to(to)
+        , cost(cost)
+    {
+    }
 };
 
 vector<vector<node>> graph;
@@ -37,8 +40,7 @@ int readInt()
     bool minus = false;
     int result = 0;
     char ch = getchar_unlocked();
-    while (true)
-    {
+    while (true) {
         if (ch == '-')
             break;
         if (ch >= '0' && ch <= '9')
@@ -49,8 +51,7 @@ int readInt()
         minus = true;
     else
         result = ch - '0';
-    while (true)
-    {
+    while (true) {
         ch = getchar_unlocked();
         if (ch < '0' || ch > '9')
             break;
@@ -66,14 +67,12 @@ void BFS()
 {
     queue<node> bfs;
     bfs.push(node(1, 0));
-    while (!bfs.empty())
-    {
+    while (!bfs.empty()) {
         node atual = bfs.front();
         bfs.pop();
         acc[atual.to - 1] = atual.cost;
         int tam = graph[atual.to].size();
-        for (int i = 0; i < tam; ++i)
-        {
+        for (int i = 0; i < tam; ++i) {
             int dest = graph[atual.to][i].to;
             bfs.push(node(dest, atual.cost + graph[atual.to][i].cost));
         }
@@ -87,10 +86,8 @@ void explore(int x, int dad)
     nodedad[x] = dad;
     treesize[x] = 1;
     int tam = graph[x].size();
-    for (int i = 0; i < tam; ++i)
-    {
-        if (graph[x][i].to != dad)
-        {
+    for (int i = 0; i < tam; ++i) {
+        if (graph[x][i].to != dad) {
             explore(graph[x][i].to, x);
             treesize[x] += treesize[graph[x][i].to];
         }
@@ -99,8 +96,7 @@ void explore(int x, int dad)
 
 void heavy_light(int x, int dad, int k, int p)
 {
-    if (p == 0)
-    {
+    if (p == 0) {
         k = cchain++;
         chainleader[k] = x;
     }
@@ -119,8 +115,7 @@ void heavy_light(int x, int dad, int k, int p)
 
 int lca(int a, int b)
 {
-    while (chain[a] != chain[b])
-    {
+    while (chain[a] != chain[b]) {
         if (treesize[chainleader[chain[a]]] >= treesize[chainleader[chain[b]]])
             b = nodedad[chainleader[chain[b]]];
         else
@@ -134,17 +129,14 @@ int lca(int a, int b)
 int main()
 {
     int de, para, custo, m, n;
-    while ((m = readInt()) && m)
-    {
+    while ((m = readInt()) && m) {
         graph.resize(m + 1);
-        for (int i = 0; i <= m; ++i)
-        {
+        for (int i = 0; i <= m; ++i) {
             nodedad[i] = nodedad[i + 1] = -1;
             acc[i] = chain[i] = 0;
         }
 
-        for (int i = 1; i < m; ++i)
-        {
+        for (int i = 1; i < m; ++i) {
             para = readInt();
             custo = readInt();
             graph[para + 1].pb(node(i + 1, custo));
@@ -154,8 +146,7 @@ int main()
         heavy_light(1, 0, -1, 0);
         BFS();
         n = readInt();
-        for (int i = 0; i < n; ++i)
-        {
+        for (int i = 0; i < n; ++i) {
             de = readInt();
             para = readInt();
             int l = lca(de + 1, para + 1);

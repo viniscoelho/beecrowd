@@ -17,40 +17,38 @@ uint64 fib[1510];
 
 void fibonacci()
 {
-	uint64 f, f1, f2;
-	fib[0] = 0;
-	fib[1] = fib[2] = 1;
-	f1 = f2 = 1;
-	FOR(i, 3, 1501)
-	{
-		f = (f1 + f2) % 1000;
-		fib[i] = f;
-		f1 = f2;
-		f2 = f;
-	}
+    uint64 f, f1, f2;
+    fib[0] = 0;
+    fib[1] = fib[2] = 1;
+    f1 = f2 = 1;
+    FOR(i, 3, 1501)
+    {
+        f = (f1 + f2) % 1000;
+        fib[i] = f;
+        f1 = f2;
+        f2 = f;
+    }
 }
 
 int main()
 {
-	uint64 ans, t, s;
-	scanf("%lld", &t);
-	getchar();
-	fibonacci();
-	while (t--)
-	{
-		scanf(" %[^\n]", str);
-		s = strlen(str), ans = 0;
-		if (s == 1)
-			ans = str[0] - 48;
-		for (int j = 0; j < s - 1; ++j)
-		{
-			if (!j)
-				ans = (str[j] - 48) * 10 + (str[j + 1] - 48);
-			else
-				ans = (ans * 10) % 1500 + (str[j + 1] - 48);
-		}
-		ans = fib[ans];
-		printf("%03lld\n", ans);
-	}
-	return 0;
+    uint64 ans, t, s;
+    scanf("%lld", &t);
+    getchar();
+    fibonacci();
+    while (t--) {
+        scanf(" %[^\n]", str);
+        s = strlen(str), ans = 0;
+        if (s == 1)
+            ans = str[0] - 48;
+        for (int j = 0; j < s - 1; ++j) {
+            if (!j)
+                ans = (str[j] - 48) * 10 + (str[j + 1] - 48);
+            else
+                ans = (ans * 10) % 1500 + (str[j + 1] - 48);
+        }
+        ans = fib[ans];
+        printf("%03lld\n", ans);
+    }
+    return 0;
 }

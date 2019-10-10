@@ -20,23 +20,19 @@ int main()
     int n;
     cin >> n;
     cin.ignore(1);
-    for (int i = 0; i < n; ++i)
-    {
+    for (int i = 0; i < n; ++i) {
         string num, div;
         cin >> num;
         cin >> div;
         long long nu = 0, di = 0, k = 0, j = 0;
-        while (k < num.size() || j < div.size())
-        {
-            if (k < num.size())
-            {
+        while (k < num.size() || j < div.size()) {
+            if (k < num.size()) {
                 if (num[k] == '1')
                     nu ^= 1;
                 nu <<= 1;
                 k++;
             }
-            if (j < div.size())
-            {
+            if (j < div.size()) {
                 if (div[j] == '1')
                     di ^= 1;
                 di <<= 1;

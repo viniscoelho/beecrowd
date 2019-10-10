@@ -1,7 +1,7 @@
-#include <iostream>
-#include <cmath>
 #include <algorithm>
+#include <cmath>
 #include <iomanip>
+#include <iostream>
 
 using namespace std;
 
@@ -10,8 +10,7 @@ int main()
     ios::sync_with_stdio(false);
     double t, a, b;
     cin >> t;
-    while (t--)
-    {
+    while (t--) {
         cin >> a >> b;
         if (b == 0)
             cout << "divisao impossivel\n";

@@ -14,32 +14,30 @@ char word[60];
 
 int main()
 {
-	while (scanf(" %[^\n]", word))
-	{
-		int word_size = strlen(word);
-		string resp;
-		bool flag = false;
-		REP(i, word_size)
-		{
-			if (isdigit(word[i]))
-				resp += word[i];
-			else if (word[i] == 'l')
-				resp += '1';
-			else if (word[i] == 'o' || word[i] == 'O')
-				resp += '0';
-			else if (word[i] != ' ' && word[i] != ',')
-			{
-				flag = true;
-				break;
-			}
-		}
-		istringstream buffer(resp);
-		int64 num;
-		buffer >> num;
-		if (flag || !resp.size() || num > 2147483647)
-			puts("error");
-		else
-			cout << num << "\n";
-	}
-	return 0;
+    while (scanf(" %[^\n]", word)) {
+        int word_size = strlen(word);
+        string resp;
+        bool flag = false;
+        REP(i, word_size)
+        {
+            if (isdigit(word[i]))
+                resp += word[i];
+            else if (word[i] == 'l')
+                resp += '1';
+            else if (word[i] == 'o' || word[i] == 'O')
+                resp += '0';
+            else if (word[i] != ' ' && word[i] != ',') {
+                flag = true;
+                break;
+            }
+        }
+        istringstream buffer(resp);
+        int64 num;
+        buffer >> num;
+        if (flag || !resp.size() || num > 2147483647)
+            puts("error");
+        else
+            cout << num << "\n";
+    }
+    return 0;
 }

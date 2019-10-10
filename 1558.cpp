@@ -17,8 +17,7 @@ unordered_set<int> sums;
 
 void initialize()
 {
-    for (int i = 0; i <= 100; i++)
-    {
+    for (int i = 0; i <= 100; i++) {
         for (int j = 0; j <= 100; j++)
             sums.insert(i * i + j * j);
     }
@@ -29,8 +28,7 @@ int main()
     ios::sync_with_stdio(false);
     int n;
     initialize();
-    while (cin >> n)
-    {
+    while (cin >> n) {
         cout << ((sums.count(n)) ? "YES\n" : "NO\n");
     }
     return 0;

@@ -24,8 +24,7 @@ int readInt()
     bool minus = false;
     int result = 0;
     char ch = getchar_unlocked();
-    while (true)
-    {
+    while (true) {
         if (ch == '-')
             break;
         if (ch >= '0' && ch <= '9')
@@ -36,8 +35,7 @@ int readInt()
         minus = true;
     else
         result = ch - '0';
-    while (true)
-    {
+    while (true) {
         ch = getchar_unlocked();
         if (ch < '0' || ch > '9')
             break;
@@ -71,8 +69,7 @@ int main()
     initialize();
     n = readInt();
     string a, b;
-    for (int i = 1; i <= n; i++)
-    {
+    for (int i = 1; i <= n; i++) {
         printf("Caso #%d: ", i);
         cin >> a >> b;
         if (a == b)

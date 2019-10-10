@@ -25,8 +25,7 @@ int readInt()
     bool minus = false;
     int result = 0;
     char ch = getchar_unlocked();
-    while (true)
-    {
+    while (true) {
         if (ch == '-')
             break;
         if (ch >= '0' && ch <= '9')
@@ -37,8 +36,7 @@ int readInt()
         minus = true;
     else
         result = ch - '0';
-    while (true)
-    {
+    while (true) {
         ch = getchar_unlocked();
         if (ch < '0' || ch > '9')
             break;
@@ -58,7 +56,7 @@ typedef struct
 vector<sack> items(ITEMS);
 int memo[ITEMS][MAXW]; //, best[ITEMS][MAXW];
 
-int fill_sack(int n, int maxWeight, vector<int> &bestItems)
+int fill_sack(int n, int maxWeight, vector<int>& bestItems)
 {
     for (int k = 0; k <= maxWeight; k++)
         memo[0][k] = 0;
@@ -66,15 +64,12 @@ int fill_sack(int n, int maxWeight, vector<int> &bestItems)
         memo[k][0] = 0;
     vector<int> solution[ITEMS][MAXW];
     for (int i = 1; i <= n; i++)
-        for (int j = 0; j <= maxWeight; j++)
-        {
+        for (int j = 0; j <= maxWeight; j++) {
             memo[i][j] = memo[i - 1][j]; /* If I do not take this item */
             solution[i][j] = solution[i - 1][j];
-            if (j - items[i - 1].weight >= 0)
-            {
+            if (j - items[i - 1].weight >= 0) {
                 /* suppose if I take this item */
-                if ((memo[i - 1][j - items[i - 1].weight] + items[i - 1].value) >= memo[i][j])
-                {
+                if ((memo[i - 1][j - items[i - 1].weight] + items[i - 1].value) >= memo[i][j]) {
                     memo[i][j] = memo[i - 1][j - items[i - 1].weight] + items[i - 1].value;
                     solution[i][j] = solution[i - 1][j - items[i - 1].weight];
                     solution[i][j].pb(i - 1);
@@ -89,11 +84,9 @@ int main()
 {
     int t, m, n;
     t = readInt();
-    while (t--)
-    {
+    while (t--) {
         n = readInt();
-        for (int k = 0; k < n; k++)
-        {
+        for (int k = 0; k < n; k++) {
             items[k].value = readInt();
             items[k].weight = readInt();
         }

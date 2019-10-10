@@ -16,60 +16,55 @@ int V, E, counter = 0;
 
 void RunDFS(int u, int blank)
 {
-	visited[u] = v;
-	counter++;
-	list<int>::iterator it;
-	for (it = graph[u].begin(); it != graph[u].end(); it++)
-	{
-		if (visited[*it] != v)
-		{
-			visited[*it] = v;
-			REP(i, blank)
-			printf(" ");
-			printf("%d-%d pathR(G,%d)\n", u, *it, *it);
-			RunDFS(*it, blank + 2);
-		}
-		else
-		{
-			REP(i, blank)
-			printf(" ");
-			printf("%d-%d\n", u, *it);
-		}
-	}
+    visited[u] = v;
+    counter++;
+    list<int>::iterator it;
+    for (it = graph[u].begin(); it != graph[u].end(); it++) {
+        if (visited[*it] != v) {
+            visited[*it] = v;
+            REP(i, blank)
+            printf(" ");
+            printf("%d-%d pathR(G,%d)\n", u, *it, *it);
+            RunDFS(*it, blank + 2);
+        } else {
+            REP(i, blank)
+            printf(" ");
+            printf("%d-%d\n", u, *it);
+        }
+    }
 }
 
 int main()
 {
-	int a, b, t;
-	scanf("%d", &t);
-	REP(i, t)
-	{
-		if (i)
-			printf("\n");
-		counter = 0;
-		scanf("%d %d", &V, &E);
-		printf("Caso %d:\n", i + 1);
-		REP(j, V)
-		graph[j].clear();
-		REP(j, E)
-		{
-			scanf("%d %d", &a, &b);
-			graph[a].pb(b);
-		}
-		REP(j, V)
-		graph[j].sort();
-		REP(j, V)
-		{
-			if (visited[j] == v)
-				continue;
-			else
-			{
-				RunDFS(j, 2);
-				if (graph[j].size() && counter != V)
-					printf("\n");
-			}
-		}
-		v++;
-	}
-	return 0;
+    int a, b, t;
+    scanf("%d", &t);
+    REP(i, t)
+    {
+        if (i)
+            printf("\n");
+        counter = 0;
+        scanf("%d %d", &V, &E);
+        printf("Caso %d:\n", i + 1);
+        REP(j, V)
+        graph[j].clear();
+        REP(j, E)
+        {
+            scanf("%d %d", &a, &b);
+            graph[a].pb(b);
+        }
+        REP(j, V)
+        graph[j].sort();
+        REP(j, V)
+        {
+            if (visited[j] == v)
+                continue;
+            else {
+                RunDFS(j, 2);
+                if (graph[j].size() && counter != V)
+                    printf("\n");
+            }
+        }
+        v++;
+    }
+    return 0;
 }

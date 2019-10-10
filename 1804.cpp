@@ -6,32 +6,27 @@
 
 using namespace std;
 
-void create(vector<int> &v, int n)
+void create(vector<int>& v, int n)
 {
     v.assign(n + 1, 0);
 }
 
-int rsq(vector<int> &v, int a, int b)
+int rsq(vector<int>& v, int a, int b)
 {
-    if (a == 0)
-    {
+    if (a == 0) {
         int sum = 0;
-        for (; b >= 0; b = (b & (b + 1)) - 1)
-        {
+        for (; b >= 0; b = (b & (b + 1)) - 1) {
             sum += v[b];
         }
         return sum;
-    }
-    else
-    {
+    } else {
         return rsq(v, 0, b) - rsq(v, 0, a - 1);
     }
 }
 
-void adjust(vector<int> &t, int k, int value)
+void adjust(vector<int>& t, int k, int value)
 {
-    for (; k <= t.size(); k |= k + 1)
-    {
+    for (; k <= t.size(); k |= k + 1) {
         t[k] += value;
     }
 }
@@ -54,22 +49,18 @@ int main()
 
     create(ft, t + 1);
 
-    for (int i = 0; i < t; ++i)
-    {
+    for (int i = 0; i < t; ++i) {
         cin >> buggy[i];
         adjust(ft, i + 1, buggy[i]);
     }
 
     char opc;
     int pos;
-    while (cin >> opc)
-    {
+    while (cin >> opc) {
         cin >> pos;
-        if (opc == 'a')
-        {
+        if (opc == 'a') {
             adjust(ft, pos, -buggy[pos - 1]);
-        }
-        else
+        } else
             cout << rsq(ft, 1, pos - 1) << endl;
     }
 

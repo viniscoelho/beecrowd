@@ -1,27 +1,27 @@
-#include <iostream>
 #include <algorithm>
-#include <functional>
-#include <locale>
-#include <map>
-#include <set>
-#include <list>
-#include <stack>
-#include <cmath>
-#include <queue>
-#include <ctime>
-#include <cfloat>
-#include <vector>
-#include <string>
-#include <cstdio>
 #include <bitset>
+#include <cassert>
+#include <cfloat>
 #include <climits>
+#include <cmath>
+#include <cstdio>
 #include <cstdlib>
 #include <cstring>
-#include <cassert>
+#include <ctime>
+#include <functional>
 #include <iomanip>
+#include <iostream>
+#include <list>
+#include <locale>
+#include <map>
+#include <queue>
+#include <set>
 #include <sstream>
-#include <utility>
+#include <stack>
+#include <string>
 #include <unordered_map>
+#include <utility>
+#include <vector>
 #define FOR(i, a, b) for (int i = a; i <= b; ++i)
 #define RFOR(i, b, a) for (int i = b; i >= a; --i)
 #define REP(i, N) for (int i = 0; i < N; ++i)
@@ -43,12 +43,10 @@ int main()
 {
     ios::sync_with_stdio(false);
     int64 t;
-    while (cin >> t && t)
-    {
+    while (cin >> t && t) {
         unordered_map<int, int> st;
         st.insert(mp(t, 1));
-        while (true)
-        {
+        while (true) {
             int64 aux = t * t;
             t = (aux / 100) % 10000;
             if (st.count(t))

@@ -23,8 +23,7 @@ int readInt()
     bool minus = false;
     int result = 0;
     char ch = getchar_unlocked();
-    while (true)
-    {
+    while (true) {
         if (ch == '-')
             break;
         if (ch >= '0' && ch <= '9')
@@ -35,8 +34,7 @@ int readInt()
         minus = true;
     else
         result = ch - '0';
-    while (true)
-    {
+    while (true) {
         ch = getchar_unlocked();
         if (ch < '0' || ch > '9')
             break;
@@ -54,8 +52,7 @@ int main()
 {
     int t, m, n;
     t = readInt();
-    for (int i = 1; i <= t; i++)
-    {
+    for (int i = 1; i <= t; i++) {
         printf("CENARIO {%d}\n", i);
         m = readInt();
         n = readInt();
@@ -63,14 +60,12 @@ int main()
         string name;
         int w, age;
         double h;
-        for (int j = 0; j < m; j++)
-        {
+        for (int j = 0; j < m; j++) {
             cin >> name >> w >> age >> h;
             renas.pb(mp(-w, mp(mp(age, h), name)));
         }
         sort(renas.begin(), renas.end());
-        for (int j = 1; j <= n; j++)
-        {
+        for (int j = 1; j <= n; j++) {
             printf("%d - %s\n", j, renas[j - 1].second.second.c_str());
         }
     }

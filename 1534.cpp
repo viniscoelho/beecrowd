@@ -12,13 +12,10 @@ int main()
     ios::sync_with_stdio(false);
     int a;
 
-    while (cin >> a)
-    {
+    while (cin >> a) {
         int b = 0, c = a - 1;
-        for (int i = 0; i < a; i++)
-        {
-            for (int j = 0; j < a; j++)
-            {
+        for (int i = 0; i < a; i++) {
+            for (int j = 0; j < a; j++) {
                 if (b == c && j == c)
                     cout << 2;
                 else if (j == b && b != c)

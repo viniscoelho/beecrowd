@@ -1,16 +1,16 @@
-#include <iostream>
-#include <cstdlib>
-#include <cstdio>
-#include <cmath>
+#include <algorithm>
 #include <climits>
+#include <cmath>
+#include <cstdio>
+#include <cstdlib>
+#include <iomanip>
+#include <iostream>
+#include <list>
+#include <map>
+#include <queue>
+#include <set>
 #include <string>
 #include <vector>
-#include <algorithm>
-#include <list>
-#include <set>
-#include <queue>
-#include <map>
-#include <iomanip>
 #define mp make_pair
 #define pb push_back
 #define MAXV 200100
@@ -29,13 +29,11 @@ int main()
     double d;
     int n, y, t;
     string s;
-    while ( cin >> n && n )
-    {
+    while (cin >> n && n) {
         priority_queue<is> pq;
-        while ( n-- )
-        {
+        while (n--) {
             cin >> s >> y >> t;
-            pq.push(mp(-(y-t), s));
+            pq.push(mp(-(y - t), s));
         }
         cout << pq.top().second << endl;
     }

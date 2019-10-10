@@ -1,16 +1,16 @@
-#include <cstring>
-#include <cstdlib>
-#include <cstdio>
-#include <iostream>
-#include <string>
-#include <iomanip>
+#include <algorithm>
+#include <climits>
 #include <cmath>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <iomanip>
+#include <iostream>
+#include <list>
 #include <map>
 #include <queue>
+#include <string>
 #include <vector>
-#include <list>
-#include <climits>
-#include <algorithm>
 #define mp make_pair
 #define pb push_back
 #define MAX 210
@@ -21,21 +21,26 @@ using namespace std;
 typedef long long int64;
 typedef pair<int64, int64> ii;
 
-int main(){
-	ios::sync_with_stdio(false);
-	int c;
-	cin >> c;
-	string a, b;
-	while ( c-- ){
-		cin >> a >> b;
-		if ( b.size() > a.size() ) cout << "nao encaixa\n";
-		else{
-			int t = 0;
-			for ( int i = a.size()-1, j = b.size()-1; j >= 0 && a[i] == b[j]; j--, i-- ) t++;
-			if ( t == b.size() ) cout << "encaixa\n";
-			else cout << "nao encaixa\n";
-		}
-	}
-	
+int main()
+{
+    ios::sync_with_stdio(false);
+    int c;
+    cin >> c;
+    string a, b;
+    while (c--) {
+        cin >> a >> b;
+        if (b.size() > a.size())
+            cout << "nao encaixa\n";
+        else {
+            int t = 0;
+            for (int i = a.size() - 1, j = b.size() - 1; j >= 0 && a[i] == b[j]; j--, i--)
+                t++;
+            if (t == b.size())
+                cout << "encaixa\n";
+            else
+                cout << "nao encaixa\n";
+        }
+    }
+
     return 0;
 }

@@ -1,8 +1,8 @@
-#include <iostream>
-#include <cmath>
-#include <vector>
-#include <cstdio>
 #include <algorithm>
+#include <cmath>
+#include <cstdio>
+#include <iostream>
+#include <vector>
 #define pb push_back
 #define mp make_pair
 
@@ -15,23 +15,21 @@ int resp;
 
 void days(double d, int n)
 {
-	if (d > 1)
-	{
-		days(d / 2, n + 1);
-		resp++;
-	}
+    if (d > 1) {
+        days(d / 2, n + 1);
+        resp++;
+    }
 }
 
 int main()
 {
-	int a;
-	double b;
-	scanf("%d", &a);
-	while (a--)
-	{
-		scanf("%lf", &b);
-		resp = 0, days(b, 0);
-		printf("%d dias\n", resp);
-	}
-	return 0;
+    int a;
+    double b;
+    scanf("%d", &a);
+    while (a--) {
+        scanf("%lf", &b);
+        resp = 0, days(b, 0);
+        printf("%d dias\n", resp);
+    }
+    return 0;
 }

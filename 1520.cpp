@@ -1,16 +1,16 @@
-#include <iostream>
-#include <cstdlib>
-#include <cstdio>
-#include <cmath>
+#include <algorithm>
 #include <climits>
+#include <cmath>
+#include <cstdio>
+#include <cstdlib>
+#include <iomanip>
+#include <iostream>
+#include <list>
+#include <map>
+#include <queue>
+#include <set>
 #include <string>
 #include <vector>
-#include <algorithm>
-#include <list>
-#include <set>
-#include <queue>
-#include <map>
-#include <iomanip>
 #define mp make_pair
 #define pb push_back
 #define MAXV 200100
@@ -29,11 +29,9 @@ int main()
 {
     ios::sync_with_stdio(false);
     int n, m, a, b;
-    while (cin >> n)
-    {
+    while (cin >> n) {
         vector<int> screws;
-        for (int i = 0; i < n; i++)
-        {
+        for (int i = 0; i < n; i++) {
             cin >> a >> b;
             for (int j = a; j <= b; j++)
                 screws.pb(j);

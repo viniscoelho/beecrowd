@@ -1,6 +1,6 @@
-#include <iostream>
 #include <algorithm>
 #include <iomanip>
+#include <iostream>
 
 using namespace std;
 
@@ -10,19 +10,16 @@ int main()
 {
     ios::sync_with_stdio(false);
     int m, n, t;
-    while (cin >> n && n)
-    {
+    while (cin >> n && n) {
         cin >> m;
         double ruas[n + 1][n + 1], p;
         int a, b;
-        for (int i = 1; i < n + 1; ++i)
-        {
+        for (int i = 1; i < n + 1; ++i) {
             for (int j = i; j < n + 1; ++j)
                 ruas[i][j] = ruas[j][i] = 0.0;
             ruas[i][i] = 1.0;
         }
-        for (int i = 0; i < m; ++i)
-        {
+        for (int i = 0; i < m; ++i) {
             cin >> a >> b >> p;
             ruas[a][b] = ruas[b][a] = p / 100.00;
         }

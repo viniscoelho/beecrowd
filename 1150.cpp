@@ -1,10 +1,10 @@
-#include <cstring>
-#include <cstdlib>
 #include <cstdio>
-#include <iostream>
-#include <string>
+#include <cstdlib>
+#include <cstring>
 #include <iomanip>
+#include <iostream>
 #include <map>
+#include <string>
 #define mp make_pair
 #define INF 0x3f3f3f3f
 
@@ -17,8 +17,7 @@ int main()
     cin >> x >> z;
     while (x >= z)
         cin >> z;
-    while (sum < z)
-    {
+    while (sum < z) {
         sum += x;
         c++, x++;
     }

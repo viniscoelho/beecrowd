@@ -19,41 +19,33 @@ vc perm(30), obj(30);
 
 int main()
 {
-	int num, n;
-	while (scanf("%d", &num) && num)
-	{
-		for (int i = 0; i < num; ++i)
-			scanf(" %c", &perm[i]);
-		for (int i = 0; i < num; ++i)
-			scanf(" %c", &obj[i]);
-		stack<char> temp;
-		int pos = 0;
-		for (int i = 0; i < num; ++i)
-		{
-			if (!temp.empty() && temp.top() == obj[i])
-			{
-				temp.pop();
-				printf("R");
-			}
-			else
-			{
-				while (pos < num && obj[i] != perm[pos])
-				{
-					temp.push(perm[pos++]);
-					printf("I");
-				}
-				if (pos < num && perm[pos] == obj[i])
-				{
-					printf("IR");
-					pos++;
-				}
-				else
-					break;
-			}
-		}
-		if (!temp.empty())
-			printf(" Impossible");
-		printf("\n");
-	}
-	return 0;
+    int num, n;
+    while (scanf("%d", &num) && num) {
+        for (int i = 0; i < num; ++i)
+            scanf(" %c", &perm[i]);
+        for (int i = 0; i < num; ++i)
+            scanf(" %c", &obj[i]);
+        stack<char> temp;
+        int pos = 0;
+        for (int i = 0; i < num; ++i) {
+            if (!temp.empty() && temp.top() == obj[i]) {
+                temp.pop();
+                printf("R");
+            } else {
+                while (pos < num && obj[i] != perm[pos]) {
+                    temp.push(perm[pos++]);
+                    printf("I");
+                }
+                if (pos < num && perm[pos] == obj[i]) {
+                    printf("IR");
+                    pos++;
+                } else
+                    break;
+            }
+        }
+        if (!temp.empty())
+            printf(" Impossible");
+        printf("\n");
+    }
+    return 0;
 }

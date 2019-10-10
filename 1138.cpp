@@ -8,12 +8,10 @@ int c[2][10], pow10[10];
 void count(int x, bool up)
 {
     int *cnt = c[up], d, dcnt = 0, r = 0, rem0 = 0, v;
-    while (x)
-    {
+    while (x) {
         d = x % 10;
         x /= 10;
-        if (dcnt)
-        {
+        if (dcnt) {
             v = d * pow10[dcnt - 1] * dcnt;
             for (int i = 0; i < 10; ++i)
                 cnt[i] += v;
@@ -37,14 +35,12 @@ int main()
     pow10[0] = 1;
     for (int i = 1; i < 10; ++i)
         pow10[i] = 10 * pow10[i - 1];
-    while (cin >> a >> b && (a || b))
-    {
+    while (cin >> a >> b && (a || b)) {
         for (int i = 0; i < 10; ++i)
             c[0][i] = c[1][i] = 0;
         count(b, 1);
         count(a - 1, 0);
-        for (int i = 0; i < 10; ++i)
-        {
+        for (int i = 0; i < 10; ++i) {
             if (i)
                 cout << " ";
             cout << c[1][i] - c[0][i];

@@ -1,24 +1,24 @@
-#include <iostream>
-#include <iomanip>
-#include <sstream>
-#include <cstdlib>
-#include <cstdio>
-#include <cmath>
-#include <climits>
-#include <string>
-#include <vector>
 #include <algorithm>
+#include <climits>
+#include <cmath>
+#include <cstdio>
+#include <cstdlib>
+#include <iomanip>
+#include <iostream>
 #include <list>
-#include <set>
-#include <queue>
 #include <map>
-#include <unordered_set>
+#include <queue>
+#include <set>
+#include <sstream>
+#include <string>
 #include <unordered_map>
+#include <unordered_set>
+#include <vector>
 #define mp make_pair
 #define pb push_back
 #define MOD 1000000007LL
-#define SSTR(x) dynamic_cast<std::ostringstream &>(          \
-                    (std::ostringstream() << std::dec << x)) \
+#define SSTR(x) dynamic_cast<std::ostringstream&>( \
+    (std::ostringstream() << std::dec << x))       \
                     .str()
 
 using namespace std;
@@ -31,10 +31,8 @@ vector<int64> fat(1010, 1);
 int64 fastPow(int64 a, int64 b)
 {
     int64 res = 1LL;
-    while (b > 0LL)
-    {
-        if (b & 1LL)
-        {
+    while (b > 0LL) {
+        if (b & 1LL) {
             res *= a;
             res %= MOD;
         }
@@ -70,14 +68,12 @@ int main()
     for (int i = 2; i < 1010; i++)
         fat[i] = (fat[i - 1] * i) % MOD;
     string s;
-    while (cin >> s)
-    {
+    while (cin >> s) {
         int64 n = fat[s.size()];
 
         int tam = s.size();
         unordered_map<char, int> letters;
-        for (int i = 0; i < tam; i++)
-        {
+        for (int i = 0; i < tam; i++) {
             if (letters.count(s[i]))
                 letters[s[i]]++;
             else
@@ -86,8 +82,7 @@ int main()
 
         int64 r = 1;
         unordered_map<char, int>::iterator it;
-        for (it = letters.begin(); it != letters.end(); it++)
-        {
+        for (it = letters.begin(); it != letters.end(); it++) {
             r = (r * fat[it->second]) % MOD;
         }
 

@@ -1,16 +1,16 @@
-#include <iostream>
-#include <cstdlib>
-#include <cstdio>
-#include <cmath>
+#include <algorithm>
 #include <climits>
+#include <cmath>
+#include <cstdio>
+#include <cstdlib>
+#include <iomanip>
+#include <iostream>
+#include <list>
+#include <map>
+#include <queue>
+#include <set>
 #include <string>
 #include <vector>
-#include <algorithm>
-#include <list>
-#include <set>
-#include <queue>
-#include <map>
-#include <iomanip>
 #define mp make_pair
 #define pb push_back
 #define MAXV 200100
@@ -30,13 +30,11 @@ int main()
     ios::sync_with_stdio(false);
     int m, n, a;
     cin >> m;
-    while (m--)
-    {
+    while (m--) {
         int qtd = 0;
         cin >> n;
         vector<ii> pos, orig(n);
-        for (int i = 0; i < n; i++)
-        {
+        for (int i = 0; i < n; i++) {
             cin >> orig[i].first;
             orig[i].second = i;
             pos.pb(orig[i]);

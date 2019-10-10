@@ -1,14 +1,14 @@
-#include <iostream>
-#include <cmath>
-#include <string>
-#include <vector>
 #include <algorithm>
-#include <list>
-#include <set>
-#include <queue>
-#include <map>
-#include <unordered_map>
+#include <cmath>
 #include <cstdio>
+#include <iostream>
+#include <list>
+#include <map>
+#include <queue>
+#include <set>
+#include <string>
+#include <unordered_map>
+#include <vector>
 #define mp make_pair
 #define pb push_back
 #define MAXV 1010
@@ -25,8 +25,7 @@ int ans, counter, flag, ok;
 
 vector<vi> directed(MAXV), undirected(MAXV);
 
-struct no
-{
+struct no {
     int pai, rank;
 };
 
@@ -39,8 +38,7 @@ int readInt()
     bool minus = false;
     int result = 0;
     char ch = getchar_unlocked();
-    while (true)
-    {
+    while (true) {
         if (ch == '-')
             break;
         if (ch >= '0' && ch <= '9')
@@ -51,8 +49,7 @@ int readInt()
         minus = true;
     else
         result = ch - '0';
-    while (true)
-    {
+    while (true) {
         ch = getchar_unlocked();
         if (ch < '0' || ch > '9')
             break;
@@ -66,8 +63,7 @@ int readInt()
 
 void initialize()
 {
-    for (int i = 0; i < V; ++i)
-    {
+    for (int i = 0; i < V; ++i) {
         pset[i].pai = i;
         pset[i].rank = visited[i] = 0;
         dfs_parent[i] = dfs_low[i] = dfs_num[i] = 0;
@@ -80,8 +76,7 @@ void link(int x, int y)
 {
     if (pset[x].rank > pset[y].rank)
         pset[y].pai = x;
-    else
-    {
+    else {
         pset[x].pai = y;
         if (pset[x].rank == pset[y].rank)
             pset[y].rank = pset[y].rank + 1;
@@ -111,18 +106,15 @@ void tarjan(int u)
     S.pb(u);
     visited[u] = true;
     vi::iterator li;
-    for (li = directed[u].begin(); li != directed[u].end(); ++li)
-    {
+    for (li = directed[u].begin(); li != directed[u].end(); ++li) {
         if (!dfs_num[*li])
             tarjan(*li);
         if (visited[*li])
             dfs_low[u] = min(dfs_low[u], dfs_low[*li]);
     }
-    if (dfs_low[u] == dfs_num[u])
-    {
+    if (dfs_low[u] == dfs_num[u]) {
         int resp = 0;
-        while (true)
-        {
+        while (true) {
             int vertex = S.back();
             S.pop_back();
             resp++;
@@ -138,10 +130,8 @@ void PointBridge(int u)
 {
     vi::iterator i;
     dfs_low[u] = dfs_num[u] = counter++;
-    for (i = undirected[u].begin(); i != undirected[u].end(); ++i)
-    {
-        if (!dfs_num[*i])
-        {
+    for (i = undirected[u].begin(); i != undirected[u].end(); ++i) {
+        if (!dfs_num[*i]) {
             ans++;
             dfs_parent[*i] = u;
             PointBridge(*i);
@@ -149,8 +139,7 @@ void PointBridge(int u)
                 if (isSameSet(u, *i))
                     ok = true;
             dfs_low[u] = min(dfs_low[u], dfs_low[*i]);
-        }
-        else if (*i != dfs_parent[u])
+        } else if (*i != dfs_parent[u])
             dfs_low[u] = min(dfs_low[u], dfs_num[*i]);
     }
 }
@@ -158,15 +147,13 @@ void PointBridge(int u)
 int main()
 {
     int a, b, t;
-    while (scanf("%d %d", &V, &E) != EOF)
-    {
+    while (scanf("%d %d", &V, &E) != EOF) {
         initialize();
         ans = counter = flag = ok = counter = 0;
         a = readInt();
         b = readInt();
         t = readInt();
-        for (int i = 0; i < E - 1; ++i)
-        {
+        for (int i = 0; i < E - 1; ++i) {
             a = readInt();
             b = readInt();
             t = readInt();
@@ -181,16 +168,14 @@ int main()
         tarjan(0);
         if (flag)
             printf("-\n");
-        else
-        {
+        else {
             for (int i = 0; i < V; ++i)
                 dfs_low[i] = dfs_num[i] = 0;
             counter = 0;
             PointBridge(0);
             if (ans != V)
                 printf("*\n");
-            else
-            {
+            else {
                 if (ok)
                     printf("2\n");
                 else

@@ -17,11 +17,10 @@ typedef pair<double, double> dd;
 
 int main()
 {
-	ios::sync_with_stdio(false);
-	int a, b;
-	while (cin >> a >> b && a + b)
-	{
-		cout << a + b << "\n";
-	}
-	return 0;
+    ios::sync_with_stdio(false);
+    int a, b;
+    while (cin >> a >> b && a + b) {
+        cout << a + b << "\n";
+    }
+    return 0;
 }

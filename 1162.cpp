@@ -17,27 +17,26 @@ int visited[60], start[60], vis = 1;
 
 int main()
 {
-	int k, t, pos;
-	scanf("%d", &k);
-	while (k--)
-	{
-		scanf("%d", &t);
-		REP(i, t)
-		scanf("%d", &start[i]);
-		int ans = 0;
-		REP(pos, t)
-		{
-			visited[pos + 1] = vis;
-			REP(j, t)
-			{
-				if (start[j] == pos + 1)
-					break;
-				if (visited[start[j]] != vis)
-					ans++;
-			}
-		}
-		printf("Optimal train swapping takes %d swaps.\n", ans);
-		vis++;
-	}
-	return 0;
+    int k, t, pos;
+    scanf("%d", &k);
+    while (k--) {
+        scanf("%d", &t);
+        REP(i, t)
+        scanf("%d", &start[i]);
+        int ans = 0;
+        REP(pos, t)
+        {
+            visited[pos + 1] = vis;
+            REP(j, t)
+            {
+                if (start[j] == pos + 1)
+                    break;
+                if (visited[start[j]] != vis)
+                    ans++;
+            }
+        }
+        printf("Optimal train swapping takes %d swaps.\n", ans);
+        vis++;
+    }
+    return 0;
 }

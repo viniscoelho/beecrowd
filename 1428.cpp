@@ -16,14 +16,13 @@ typedef vector<int> vi;
 
 int main()
 {
-	ios::sync_with_stdio(false);
-	double a, b;
-	int c;
-	cin >> c;
-	while (c--)
-	{
-		cin >> a >> b;
-		cout << int(ceil((double(a - 2) / 3.0)) * ceil((double(b - 2) / 3.0))) << "\n";
-	}
-	return 0;
+    ios::sync_with_stdio(false);
+    double a, b;
+    int c;
+    cin >> c;
+    while (c--) {
+        cin >> a >> b;
+        cout << int(ceil((double(a - 2) / 3.0)) * ceil((double(b - 2) / 3.0))) << "\n";
+    }
+    return 0;
 }

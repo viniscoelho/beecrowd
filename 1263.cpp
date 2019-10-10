@@ -17,21 +17,19 @@ char *p, a, word[220];
 
 int main()
 {
-	while (scanf(" %[^\n]", word))
-	{
-		p = strtok(word, " ");
-		int ans = 0, cont = 0;
-		while (p != NULL)
-		{
-			if (!cont)
-				cont++, a = tolower(*p);
-			else if (cont == 1 && tolower(*p) == a)
-				ans++, cont++;
-			else if (tolower(*p) != a)
-				cont = 1, a = tolower(*p);
-			p = strtok(NULL, " ");
-		}
-		printf("%d\n", ans);
-	}
-	return 0;
+    while (scanf(" %[^\n]", word)) {
+        p = strtok(word, " ");
+        int ans = 0, cont = 0;
+        while (p != NULL) {
+            if (!cont)
+                cont++, a = tolower(*p);
+            else if (cont == 1 && tolower(*p) == a)
+                ans++, cont++;
+            else if (tolower(*p) != a)
+                cont = 1, a = tolower(*p);
+            p = strtok(NULL, " ");
+        }
+        printf("%d\n", ans);
+    }
+    return 0;
 }

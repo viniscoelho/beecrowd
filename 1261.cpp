@@ -15,23 +15,21 @@ typedef long double Ld;
 
 int main()
 {
-	ios::sync_with_stdio(false);
-	long m, n, b;
-	cin >> m >> n;
-	unordered_map<string, int> bib;
-	string a;
-	while (m--)
-	{
-		cin >> a >> b;
-		bib.insert(mp(a, b));
-	}
-	while (n--)
-	{
-		long ans = 0;
-		while (cin >> a && a != ".")
-			if (bib.count(a))
-				ans += bib[a];
-		cout << ans << "\n";
-	}
-	return 0;
+    ios::sync_with_stdio(false);
+    long m, n, b;
+    cin >> m >> n;
+    unordered_map<string, int> bib;
+    string a;
+    while (m--) {
+        cin >> a >> b;
+        bib.insert(mp(a, b));
+    }
+    while (n--) {
+        long ans = 0;
+        while (cin >> a && a != ".")
+            if (bib.count(a))
+                ans += bib[a];
+        cout << ans << "\n";
+    }
+    return 0;
 }

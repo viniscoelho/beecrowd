@@ -4,8 +4,8 @@
 		Os menores ou menor numeros sorteados sao impressos
 */
 
-#include <iostream>
 #include <algorithm>
+#include <iostream>
 #include <queue>
 #define mp make_pair
 
@@ -20,15 +20,13 @@ int main()
 {
     ios::sync_with_stdio(false);
     bool flag = false;
-    while (cin >> n >> c >> k && n + c + k)
-    {
+    while (cin >> n >> c >> k && n + c + k) {
         if (flag)
             for (int i = 0; i < k; ++i)
                 loteria[i] = 0;
         priority_queue<ii> pq;
         for (int i = 0; i < n; ++i)
-            for (int j = 0; j < c; ++j)
-            {
+            for (int j = 0; j < c; ++j) {
                 cin >> p;
                 loteria[p - 1]++;
             }
@@ -36,8 +34,7 @@ int main()
             pq.push(mp(-(loteria[i]), -(i + 1)));
         MAX = -pq.top().first;
         int cont = 0;
-        while (-pq.top().first == MAX && !pq.empty())
-        {
+        while (-pq.top().first == MAX && !pq.empty()) {
             if (cont == 0)
                 cout << -pq.top().second;
             else

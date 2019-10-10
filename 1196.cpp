@@ -17,60 +17,59 @@ unordered_map<char, char> bib;
 
 int main()
 {
-	ios::sync_with_stdio(false);
-	bib[' '] = ' ';
-	bib['/'] = '.';
-	bib['.'] = ',';
-	bib[','] = 'M';
-	bib['M'] = 'N';
-	bib['N'] = 'B';
-	bib['B'] = 'V';
-	bib['V'] = 'C';
-	bib['C'] = 'X';
-	bib['X'] = 'Z';
-	bib['Z'] = '\'';
-	bib['\''] = ';';
-	bib[';'] = 'L';
-	bib['L'] = 'K';
-	bib['K'] = 'J';
-	bib['J'] = 'H';
-	bib['H'] = 'G';
-	bib['G'] = 'F';
-	bib['F'] = 'D';
-	bib['D'] = 'S';
-	bib['S'] = 'A';
-	bib['A'] = '\\';
-	bib['\\'] = ']';
-	bib[']'] = '[';
-	bib['['] = 'P';
-	bib['P'] = 'O';
-	bib['O'] = 'I';
-	bib['I'] = 'U';
-	bib['U'] = 'Y';
-	bib['Y'] = 'T';
-	bib['T'] = 'R';
-	bib['R'] = 'E';
-	bib['E'] = 'W';
-	bib['W'] = 'Q';
-	bib['Q'] = '=';
-	bib['='] = '-';
-	bib['-'] = '0';
-	bib['0'] = '9';
-	bib['9'] = '8';
-	bib['8'] = '7';
-	bib['7'] = '6';
-	bib['6'] = '5';
-	bib['5'] = '4';
-	bib['4'] = '3';
-	bib['3'] = '2';
-	bib['2'] = '1';
-	bib['1'] = '`';
-	string a;
-	while (getline(cin, a))
-	{
-		for (int i = 0; i < a.size(); ++i)
-			cout << bib[a[i]];
-		cout << "\n";
-	}
-	return 0;
+    ios::sync_with_stdio(false);
+    bib[' '] = ' ';
+    bib['/'] = '.';
+    bib['.'] = ',';
+    bib[','] = 'M';
+    bib['M'] = 'N';
+    bib['N'] = 'B';
+    bib['B'] = 'V';
+    bib['V'] = 'C';
+    bib['C'] = 'X';
+    bib['X'] = 'Z';
+    bib['Z'] = '\'';
+    bib['\''] = ';';
+    bib[';'] = 'L';
+    bib['L'] = 'K';
+    bib['K'] = 'J';
+    bib['J'] = 'H';
+    bib['H'] = 'G';
+    bib['G'] = 'F';
+    bib['F'] = 'D';
+    bib['D'] = 'S';
+    bib['S'] = 'A';
+    bib['A'] = '\\';
+    bib['\\'] = ']';
+    bib[']'] = '[';
+    bib['['] = 'P';
+    bib['P'] = 'O';
+    bib['O'] = 'I';
+    bib['I'] = 'U';
+    bib['U'] = 'Y';
+    bib['Y'] = 'T';
+    bib['T'] = 'R';
+    bib['R'] = 'E';
+    bib['E'] = 'W';
+    bib['W'] = 'Q';
+    bib['Q'] = '=';
+    bib['='] = '-';
+    bib['-'] = '0';
+    bib['0'] = '9';
+    bib['9'] = '8';
+    bib['8'] = '7';
+    bib['7'] = '6';
+    bib['6'] = '5';
+    bib['5'] = '4';
+    bib['4'] = '3';
+    bib['3'] = '2';
+    bib['2'] = '1';
+    bib['1'] = '`';
+    string a;
+    while (getline(cin, a)) {
+        for (int i = 0; i < a.size(); ++i)
+            cout << bib[a[i]];
+        cout << "\n";
+    }
+    return 0;
 }

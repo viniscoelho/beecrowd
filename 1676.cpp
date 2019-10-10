@@ -1,27 +1,27 @@
-#include <iostream>
 #include <algorithm>
-#include <functional>
-#include <locale>
-#include <map>
-#include <set>
-#include <list>
-#include <stack>
-#include <cmath>
-#include <queue>
-#include <ctime>
-#include <cfloat>
-#include <vector>
-#include <string>
-#include <cstdio>
 #include <bitset>
+#include <cassert>
+#include <cfloat>
 #include <climits>
+#include <cmath>
+#include <cstdio>
 #include <cstdlib>
 #include <cstring>
-#include <cassert>
+#include <ctime>
+#include <functional>
 #include <iomanip>
+#include <iostream>
+#include <list>
+#include <locale>
+#include <map>
+#include <queue>
+#include <set>
 #include <sstream>
-#include <utility>
+#include <stack>
+#include <string>
 #include <unordered_map>
+#include <utility>
+#include <vector>
 #define FOR(i, a, b) for (int i = a; i <= b; ++i)
 #define RFOR(i, b, a) for (int i = b; i >= a; --i)
 #define REP(i, N) for (int i = 0; i < N; ++i)
@@ -45,24 +45,20 @@ void initialize()
     for (int i = 2; i < MAX; i++)
         lucky.insert(i);
     int st = lucky.size();
-    for (int i = 2; i < st; i++)
-    {
+    for (int i = 2; i < st; i++) {
         int at = *lucky.begin(), aux = 1;
         resp.pb(at);
         lucky.erase(lucky.begin());
         set<int>::iterator it = lucky.begin(), tmp;
-        while (it != lucky.end())
-        {
-            if (aux == at)
-            {
+        while (it != lucky.end()) {
+            if (aux == at) {
                 tmp = it;
                 tmp++;
                 lucky.erase(it);
                 st = lucky.size();
                 aux = 1;
                 it = tmp;
-            }
-            else
+            } else
                 aux++, it++;
         }
     }
@@ -73,8 +69,7 @@ int main()
     ios::sync_with_stdio(false);
     initialize();
     int n;
-    while (cin >> n && n)
-    {
+    while (cin >> n && n) {
         cout << resp[n - 1] << "\n";
     }
     return 0;

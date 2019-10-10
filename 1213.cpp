@@ -1,16 +1,16 @@
-#include <cstring>
-#include <cstdlib>
-#include <cstdio>
-#include <iostream>
-#include <string>
-#include <iomanip>
+#include <algorithm>
+#include <climits>
 #include <cmath>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <iomanip>
+#include <iostream>
+#include <list>
 #include <map>
 #include <queue>
+#include <string>
 #include <vector>
-#include <list>
-#include <climits>
-#include <algorithm>
 #define mp make_pair
 #define pb push_back
 #define MAX 210
@@ -27,17 +27,15 @@ char comm[100];
 
 int main()
 {
-	int a, s, t;
-	while (scanf("%d", &t) != EOF)
-	{
-		int a = 1, b = 1, c = 0;
-		while (a)
-		{
-			a = b % t;
-			b = (b * 10 + 1) % t;
-			c++;
-		}
-		printf("%d\n", c);
-	}
-	return 0;
+    int a, s, t;
+    while (scanf("%d", &t) != EOF) {
+        int a = 1, b = 1, c = 0;
+        while (a) {
+            a = b % t;
+            b = (b * 10 + 1) % t;
+            c++;
+        }
+        printf("%d\n", c);
+    }
+    return 0;
 }

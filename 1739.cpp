@@ -2,8 +2,8 @@
 #define mp make_pair
 #define pb push_back
 #define MAXV 200100
-#define SSTR(x) dynamic_cast<std::ostringstream &>(          \
-                    (std::ostringstream() << std::dec << x)) \
+#define SSTR(x) dynamic_cast<std::ostringstream&>( \
+    (std::ostringstream() << std::dec << x))       \
                     .str()
 
 using namespace std;
@@ -20,8 +20,7 @@ int readInt()
     int result = 0;
     char ch;
     ch = getchar_unlocked();
-    while (true)
-    {
+    while (true) {
         if (ch == '-')
             break;
         if (ch >= '0' && ch <= '9')
@@ -32,8 +31,7 @@ int readInt()
         minus = true;
     else
         result = ch - '0';
-    while (true)
-    {
+    while (true) {
         ch = getchar_unlocked();
         if (ch < '0' || ch > '9')
             break;
@@ -51,19 +49,16 @@ void threebonacci()
 {
     int64 a = 0, b = 1, d = 0;
     int count = 1;
-    while (count < 61)
-    {
+    while (count < 61) {
         d = a + b;
         a = b;
         b = d;
         if (d % 3 == 0)
             three.insert(mp(count++, d));
-        else
-        {
+        else {
             string s = SSTR(d);
             for (int i = 0; i < s.size(); i++)
-                if (s[i] == '3')
-                {
+                if (s[i] == '3') {
                     three.insert(mp(count++, d));
                     break;
                 }
@@ -76,8 +71,7 @@ int main()
     ios::sync_with_stdio(false);
     threebonacci();
     int s;
-    while (cin >> s)
-    {
+    while (cin >> s) {
         cout << three[s] << endl;
     }
     return 0;

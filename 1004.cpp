@@ -1,10 +1,10 @@
-#include <iostream>
-#include <queue>
-#include <map>
 #include <algorithm>
-#include <vector>
-#include <string>
 #include <cctype>
+#include <iostream>
+#include <map>
+#include <queue>
+#include <string>
+#include <vector>
 #define mp make_pair
 #define pb push_back
 

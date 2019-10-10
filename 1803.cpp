@@ -1,16 +1,16 @@
-#include <iostream>
-#include <cstdlib>
-#include <cmath>
-#include <climits>
-#include <string>
-#include <cstring>
-#include <vector>
 #include <algorithm>
+#include <climits>
+#include <cmath>
+#include <cstdlib>
+#include <cstring>
+#include <iostream>
 #include <list>
-#include <set>
-#include <queue>
 #include <map>
+#include <queue>
+#include <set>
 #include <sstream>
+#include <string>
+#include <vector>
 #define mp make_pair
 #define pb push_back
 #define MAXV 200100
@@ -31,19 +31,16 @@ int main()
         cin >> s[i];
     int chain = s[0].size();
     string m[90];
-    for (int i = 0; i < 4; i++)
-    {
+    for (int i = 0; i < 4; i++) {
         for (int j = 0; j < chain; j++)
             m[j] += s[i][j];
     }
     int64 vet[chain];
-    for (int i = 0; i < chain; i++)
-    {
+    for (int i = 0; i < chain; i++) {
         stringstream buffer(m[i]);
         buffer >> vet[i];
     }
-    for (int i = 1; i < chain - 1; i++)
-    {
+    for (int i = 1; i < chain - 1; i++) {
         cout << (char)((vet[0] * vet[i] + vet[chain - 1]) % 257);
     }
     cout << "\n";

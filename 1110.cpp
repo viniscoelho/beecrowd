@@ -1,11 +1,11 @@
-#include <iostream>
 #include <algorithm>
-#include <vector>
-#include <map>
 #include <deque>
+#include <iostream>
+#include <map>
+#include <sstream>
 #include <stack>
 #include <string>
-#include <sstream>
+#include <vector>
 #define mp make_pair
 
 using namespace std;
@@ -18,15 +18,13 @@ int main()
 {
     ios::sync_with_stdio(false);
     int n, resp = 0;
-    for (cin >> n; n != 0; cin >> n)
-    {
+    for (cin >> n; n != 0; cin >> n) {
         cout << "Discarded cards:";
         deque<int> scard;
         int count = 0;
         for (int i = n; i > 0; i--)
             scard.push_front(i);
-        while (scard.front() != scard.back())
-        {
+        while (scard.front() != scard.back()) {
             if (count == 0)
                 cout << " " << scard.front();
             else

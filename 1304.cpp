@@ -11,28 +11,27 @@ using namespace std;
 
 int main()
 {
-	ios::sync_with_stdio(false);
-	string t, r;
-	double sum = 0., init = 0., sp = 0.;
-	while (getline(cin, t))
-	{
-		r = t;
-		REP(i, t.size())
-		if (t[i] == ':')
-			t[i] = ' ';
-		istringstream buffer(t);
-		vector<double> res;
-		double p;
-		while (buffer >> p)
-			res.pb(p);
-		double s = res[0] * 3600. + res[1] * 60. + res[2];
-		double now = (s - init) * sp;
-		sum += now / 3600.;
-		init = s;
-		if (res.size() > 3)
-			sp = res[3];
-		else
-			cout << r << " " << fixed << setprecision(2) << sum << " km\n";
-	}
-	return 0;
+    ios::sync_with_stdio(false);
+    string t, r;
+    double sum = 0., init = 0., sp = 0.;
+    while (getline(cin, t)) {
+        r = t;
+        REP(i, t.size())
+        if (t[i] == ':')
+            t[i] = ' ';
+        istringstream buffer(t);
+        vector<double> res;
+        double p;
+        while (buffer >> p)
+            res.pb(p);
+        double s = res[0] * 3600. + res[1] * 60. + res[2];
+        double now = (s - init) * sp;
+        sum += now / 3600.;
+        init = s;
+        if (res.size() > 3)
+            sp = res[3];
+        else
+            cout << r << " " << fixed << setprecision(2) << sum << " km\n";
+    }
+    return 0;
 }

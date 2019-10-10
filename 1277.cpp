@@ -16,10 +16,9 @@ typedef unsigned long long uint64;
 typedef pair<double, double> dd;
 typedef pair<string, dd> sdd;
 
-struct aluno
-{
-	char name[110];
-	double p, q;
+struct aluno {
+    char name[110];
+    double p, q;
 };
 
 vector<aluno> stu(MAXN);
@@ -27,38 +26,35 @@ char name[MAXN];
 
 int main()
 {
-	int a, t;
-	scanf("%d", &t);
-	while (t--)
-	{
-		scanf("%d", &a);
-		REP(i, a)
-		{
-			scanf(" %s", &stu[i].name);
-			stu[i].p = stu[i].q = 0.;
-		}
-		int c = 0;
-		REP(i, a)
-		{
-			scanf(" %s", &name);
-			int name_size = strlen(name);
-			REP(k, name_size)
-			{
-				if (name[k] == 'P' || name[k] == 'A')
-					stu[i].q++;
-				if (name[k] == 'P')
-					stu[i].p++;
-			}
-			if (!c && (stu[i].p / stu[i].q) * 100 < 75)
-			{
-				printf("%s", stu[i].name);
-				c++;
-			}
-			else if (c && (stu[i].p / stu[i].q) * 100 < 75)
-				printf(" %s", stu[i].name);
-		}
-		printf("\n");
-	}
+    int a, t;
+    scanf("%d", &t);
+    while (t--) {
+        scanf("%d", &a);
+        REP(i, a)
+        {
+            scanf(" %s", &stu[i].name);
+            stu[i].p = stu[i].q = 0.;
+        }
+        int c = 0;
+        REP(i, a)
+        {
+            scanf(" %s", &name);
+            int name_size = strlen(name);
+            REP(k, name_size)
+            {
+                if (name[k] == 'P' || name[k] == 'A')
+                    stu[i].q++;
+                if (name[k] == 'P')
+                    stu[i].p++;
+            }
+            if (!c && (stu[i].p / stu[i].q) * 100 < 75) {
+                printf("%s", stu[i].name);
+                c++;
+            } else if (c && (stu[i].p / stu[i].q) * 100 < 75)
+                printf(" %s", stu[i].name);
+        }
+        printf("\n");
+    }
 
-	return 0;
+    return 0;
 }

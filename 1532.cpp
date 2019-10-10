@@ -1,26 +1,26 @@
-#include <iostream>
 #include <algorithm>
-#include <functional>
-#include <locale>
-#include <map>
-#include <set>
-#include <list>
-#include <stack>
-#include <cmath>
-#include <queue>
-#include <ctime>
-#include <cfloat>
-#include <vector>
-#include <string>
-#include <cstdio>
 #include <bitset>
+#include <cassert>
+#include <cfloat>
 #include <climits>
+#include <cmath>
+#include <cstdio>
 #include <cstdlib>
 #include <cstring>
-#include <cassert>
+#include <ctime>
+#include <functional>
 #include <iomanip>
+#include <iostream>
+#include <list>
+#include <locale>
+#include <map>
+#include <queue>
+#include <set>
 #include <sstream>
+#include <stack>
+#include <string>
 #include <utility>
+#include <vector>
 #define FOR(i, a, b) for (int i = a; i <= b; ++i)
 #define RFOR(i, b, a) for (int i = b; i >= a; --i)
 #define REP(i, N) for (int i = 0; i < N; ++i)
@@ -46,8 +46,7 @@ int readInt()
     bool minus = false;
     int result = 0;
     char ch = getchar_unlocked();
-    while (true)
-    {
+    while (true) {
         if (ch == '-')
             break;
         if (ch >= '0' && ch <= '9')
@@ -58,8 +57,7 @@ int readInt()
         minus = true;
     else
         result = ch - '0';
-    while (true)
-    {
+    while (true) {
         ch = getchar_unlocked();
         if (ch < '0' || ch > '9')
             break;
@@ -76,19 +74,14 @@ int matrix[MAX][MAX];
 int main()
 {
     int d, v;
-    while (scanf("%d %d", &d, &v) && d + v)
-    {
+    while (scanf("%d %d", &d, &v) && d + v) {
         bool flag = false;
-        for (int k = v; k >= 1; k--)
-        {
+        for (int k = v; k >= 1; k--) {
             int temp = 0;
-            while (v)
-            {
-                for (int i = 0; i < v; i++)
-                {
+            while (v) {
+                for (int i = 0; i < v; i++) {
                     temp += v;
-                    if (temp == d)
-                    {
+                    if (temp == d) {
                         printf("possivel\n");
                         flag = true;
                         break;

@@ -20,9 +20,9 @@ typedef pair<double, double> dd;
 
 int cmp(double a, double b = 0.0)
 {
-	if (fabs(a - b) < EPS)
-		return 0;
-	return a > b ? 1 : -1;
+    if (fabs(a - b) < EPS)
+        return 0;
+    return a > b ? 1 : -1;
 }
 
 vector<list<int>> graph(1010);
@@ -31,47 +31,44 @@ int resp = 0;
 
 void DFS(int u)
 {
-	list<int>::iterator it;
-	for (it = graph[u].begin(); it != graph[u].end(); ++it)
-	{
-		if (visited[*it] != v)
-		{
-			resp++;
-			visited[*it] = v;
-			DFS(*it);
-		}
-	}
+    list<int>::iterator it;
+    for (it = graph[u].begin(); it != graph[u].end(); ++it) {
+        if (visited[*it] != v) {
+            resp++;
+            visited[*it] = v;
+            DFS(*it);
+        }
+    }
 }
 
 int main()
 {
-	ios::sync_with_stdio(false);
-	int n;
-	string r;
-	while (cin >> n && n)
-	{
-		resp = 0;
-		REP(i, 1010)
-		graph[i].clear();
-		REP(i, n)
-		{
-			cin >> r;
-			int par[2], k = 0;
-			FOR(j, 1, r.size() - 1)
-			{
-				string a;
-				while (isdigit(r[j]))
-					a += r[j++];
-				stringstream buffer(a);
-				buffer >> par[k++];
-			}
-			graph[par[0] - 1].pb(par[1] - 1);
-			graph[par[1] - 1].pb(par[0] - 1);
-		}
-		DFS(0);
-		cout << ((resp == 0) ? resp + 1 : resp) << "\n";
-		v++;
-	}
+    ios::sync_with_stdio(false);
+    int n;
+    string r;
+    while (cin >> n && n) {
+        resp = 0;
+        REP(i, 1010)
+        graph[i].clear();
+        REP(i, n)
+        {
+            cin >> r;
+            int par[2], k = 0;
+            FOR(j, 1, r.size() - 1)
+            {
+                string a;
+                while (isdigit(r[j]))
+                    a += r[j++];
+                stringstream buffer(a);
+                buffer >> par[k++];
+            }
+            graph[par[0] - 1].pb(par[1] - 1);
+            graph[par[1] - 1].pb(par[0] - 1);
+        }
+        DFS(0);
+        cout << ((resp == 0) ? resp + 1 : resp) << "\n";
+        v++;
+    }
 
-	return 0;
+    return 0;
 }

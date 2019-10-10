@@ -19,33 +19,31 @@ string buffer;
 
 int main()
 {
-	ios::sync_with_stdio(false);
-	int num, n = 0;
-	cin >> num;
-	cin.ignore();
-	getline(cin, buffer);
-	while (num--)
-	{
-		if (n > 0)
-			cout << "\n";
-		unordered_map<string, double> trees;
-		unordered_map<string, double>::iterator mit;
-		pair<unordered_map<string, double>::iterator, bool> ret;
-		double cont = 0.;
-		while (getline(cin, buffer) && buffer.size())
-		{
-			ret = trees.insert(mp(buffer, 1.));
-			if (!ret.second)
-				trees[buffer]++;
-			cont++;
-		}
-		vector<sd> rTree;
-		for (mit = trees.begin(); mit != trees.end(); ++mit)
-			rTree.pb(mp(mit->first, mit->second));
-		sort(rTree.begin(), rTree.end());
-		for (int i = 0; i < rTree.size(); ++i)
-			cout << rTree[i].first << " " << fixed << setprecision(4) << ((rTree[i].second) / cont) * 100 << "\n";
-		n++;
-	}
-	return 0;
+    ios::sync_with_stdio(false);
+    int num, n = 0;
+    cin >> num;
+    cin.ignore();
+    getline(cin, buffer);
+    while (num--) {
+        if (n > 0)
+            cout << "\n";
+        unordered_map<string, double> trees;
+        unordered_map<string, double>::iterator mit;
+        pair<unordered_map<string, double>::iterator, bool> ret;
+        double cont = 0.;
+        while (getline(cin, buffer) && buffer.size()) {
+            ret = trees.insert(mp(buffer, 1.));
+            if (!ret.second)
+                trees[buffer]++;
+            cont++;
+        }
+        vector<sd> rTree;
+        for (mit = trees.begin(); mit != trees.end(); ++mit)
+            rTree.pb(mp(mit->first, mit->second));
+        sort(rTree.begin(), rTree.end());
+        for (int i = 0; i < rTree.size(); ++i)
+            cout << rTree[i].first << " " << fixed << setprecision(4) << ((rTree[i].second) / cont) * 100 << "\n";
+        n++;
+    }
+    return 0;
 }

@@ -1,12 +1,12 @@
-#include <iostream>
 #include <algorithm>
+#include <climits>
 #include <cmath>
-#include <vector>
+#include <cstring>
+#include <iostream>
+#include <map>
 #include <queue>
 #include <stack>
-#include <map>
-#include <cstring>
-#include <climits>
+#include <vector>
 
 using namespace std;
 
@@ -19,20 +19,16 @@ int main()
     int p, s, n; //number of players, squares, dices
     int t[3], d[2];
 
-    while (cin >> p >> s && p + s)
-    {
+    while (cin >> p >> s && p + s) {
         memset(squares, 0, sizeof squares);
         int player = 1;
-        for (int i = 0; i < 3; i++)
-        {
+        for (int i = 0; i < 3; i++) {
             cin >> t[i];
         }
         cin >> n;
         int winner = 0;
-        for (int k = 0; k < n; k++)
-        {
-            if (visited[player] == v)
-            {
+        for (int k = 0; k < n; k++) {
+            if (visited[player] == v) {
                 visited[player] = 0;
                 player = (player % p) + 1;
                 k--;

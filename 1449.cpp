@@ -15,26 +15,22 @@ int main()
     ios::sync_with_stdio(false);
     int t, m, n;
     cin >> t;
-    while (t--)
-    {
+    while (t--) {
         cin >> m >> n;
         cin.ignore();
         string word, trad, resp;
         unordered_map<string, string> dicc;
-        while (m--)
-        {
+        while (m--) {
             getline(cin, word);
             getline(cin, trad);
             dicc.insert(mp(word, trad));
         }
-        while (n--)
-        {
+        while (n--) {
             getline(cin, resp);
             istringstream buffer(resp);
             string b;
             int q = 0;
-            while (buffer >> b)
-            {
+            while (buffer >> b) {
                 if (q++)
                     cout << " ";
                 if (dicc.count(b))

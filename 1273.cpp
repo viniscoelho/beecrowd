@@ -20,27 +20,25 @@ char word[MAXN][MAXN];
 
 int main()
 {
-	int n = 0, t;
-	while (scanf("%d", &t) && t)
-	{
-		if (n++)
-			printf("\n");
-		int m = 0;
-		REP(i, t)
-		{
-			scanf(" %s", &word[i]);
-			m = max(m, int(strlen(word[i])));
-		}
-		REP(i, t)
-		{
-			int c = 0, s = strlen(word[i]);
-			while (s + c < m)
-			{
-				printf(" ");
-				c++;
-			}
-			puts(word[i]);
-		}
-	}
-	return 0;
+    int n = 0, t;
+    while (scanf("%d", &t) && t) {
+        if (n++)
+            printf("\n");
+        int m = 0;
+        REP(i, t)
+        {
+            scanf(" %s", &word[i]);
+            m = max(m, int(strlen(word[i])));
+        }
+        REP(i, t)
+        {
+            int c = 0, s = strlen(word[i]);
+            while (s + c < m) {
+                printf(" ");
+                c++;
+            }
+            puts(word[i]);
+        }
+    }
+    return 0;
 }

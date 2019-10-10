@@ -1,10 +1,10 @@
-#include <cstring>
-#include <cstdlib>
 #include <cstdio>
-#include <iostream>
-#include <string>
+#include <cstdlib>
+#include <cstring>
 #include <iomanip>
+#include <iostream>
 #include <map>
+#include <string>
 #include <vector>
 #define mp make_pair
 #define pb push_back
@@ -19,8 +19,7 @@ int main()
     char c;
     scanf(" %c", &c);
     for (int i = 0; i < 12; ++i)
-        for (int j = 0; j < 12; ++j)
-        {
+        for (int j = 0; j < 12; ++j) {
             scanf("%lf", &line[i][j]);
             if (j > i)
                 sum += line[i][j];

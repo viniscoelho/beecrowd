@@ -1,16 +1,16 @@
-#include <cstring>
-#include <cstdlib>
-#include <cstdio>
-#include <iostream>
-#include <string>
-#include <iomanip>
+#include <algorithm>
+#include <climits>
 #include <cmath>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <iomanip>
+#include <iostream>
+#include <list>
 #include <map>
 #include <queue>
+#include <string>
 #include <vector>
-#include <list>
-#include <climits>
-#include <algorithm>
 #define mp make_pair
 #define pb push_back
 #define MAX 150
@@ -22,16 +22,21 @@ typedef pair<int, int> ii;
 typedef pair<ii, int64> ii_64;
 typedef pair<int64, int> ii64;
 const double EPS = 1e-10;
-struct aresta
-{
+struct aresta {
     int a, b;
     int64 c;
 };
-struct edge
-{
+struct edge {
     int u, v, next;
     int64 cost, flow;
-    edge(int u = 0, int v = 0, int next = 0, int64 cost = 0, int64 flow = 0) : u(u), v(v), next(next), cost(cost), flow(flow) {}
+    edge(int u = 0, int v = 0, int next = 0, int64 cost = 0, int64 flow = 0)
+        : u(u)
+        , v(v)
+        , next(next)
+        , cost(cost)
+        , flow(flow)
+    {
+    }
 };
 int V, E, A, previous[MAXV];
 int64 f, sp, dist[MAX], p[MAX];
@@ -50,8 +55,7 @@ void augment(int v, int64 minEdge)
     for (int i = p[v]; i != -1; i = p[graph[i].u])
         minEdge = min(minEdge, graph[i].flow);
 
-    for (int i = p[v]; i != -1; i = p[graph[i].u])
-    {
+    for (int i = p[v]; i != -1; i = p[graph[i].u]) {
         graph[i].flow -= minEdge;
         graph[i ^ 1].flow += minEdge;
     }
@@ -59,8 +63,7 @@ void augment(int v, int64 minEdge)
 }
 bool dijkstra(int s, int t)
 {
-    for (int i = 0; i <= V + 1; ++i)
-    {
+    for (int i = 0; i <= V + 1; ++i) {
         dist[i] = INF;
         p[i] = -1;
         visited[i] = false;
@@ -70,19 +73,15 @@ bool dijkstra(int s, int t)
     visited[s] = true;
     q.push(s);
 
-    while (!q.empty())
-    {
+    while (!q.empty()) {
         int u = q.front();
         q.pop();
-        for (int i = previous[u]; i != -1; i = graph[i].next)
-        {
+        for (int i = previous[u]; i != -1; i = graph[i].next) {
             int v = graph[i].v;
-            if (graph[i].flow && dist[u] + graph[i].cost < dist[v])
-            {
+            if (graph[i].flow && dist[u] + graph[i].cost < dist[v]) {
                 dist[v] = dist[u] + graph[i].cost;
                 p[v] = i;
-                if (!visited[v])
-                {
+                if (!visited[v]) {
                     visited[v] = true;
                     q.push(v);
                 }
@@ -97,8 +96,7 @@ int main()
 {
     int t = 1;
     int64 d, k;
-    while (scanf("%d %d", &V, &E) != EOF)
-    {
+    while (scanf("%d %d", &V, &E) != EOF) {
         printf("Instancia %d\n", t++);
         A = 0;
         for (int i = 0; i <= V + 1; ++i)
@@ -108,14 +106,12 @@ int main()
         scanf("%lld %lld", &d, &k);
         addEdge(0, 1, 0, d);
         addEdge(V, V + 1, 0, d);
-        for (int i = 0; i < E; ++i)
-        {
+        for (int i = 0; i < E; ++i) {
             addEdge(edges[i].a, edges[i].b, edges[i].c, k);
             addEdge(edges[i].b, edges[i].a, edges[i].c, k);
         }
         int64 maxFlow = 0, resp = 0;
-        while (dijkstra(0, V + 1))
-        {
+        while (dijkstra(0, V + 1)) {
             f = 0;
             augment(V + 1, INF);
             maxFlow += f;

@@ -8,8 +8,7 @@ using namespace std;
 int main()
 {
     string cpf;
-    while (cin >> cpf)
-    {
+    while (cin >> cpf) {
         vector<int> a(12);
         int j = 0;
         for (int i = 0; i < cpf.size(); i++)

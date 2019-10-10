@@ -1,17 +1,17 @@
-#include <iostream>
-#include <cstdio>
 #include <algorithm>
-#include <cstring>
-#include <string>
 #include <cctype>
-#include <stack>
-#include <queue>
-#include <list>
-#include <vector>
-#include <map>
-#include <sstream>
-#include <set>
 #include <cmath>
+#include <cstdio>
+#include <cstring>
+#include <iostream>
+#include <list>
+#include <map>
+#include <queue>
+#include <set>
+#include <sstream>
+#include <stack>
+#include <string>
+#include <vector>
 
 using namespace std;
 
@@ -45,21 +45,18 @@ int hasPrecedence(char p, char q)
 void setOperator(char op)
 {
     queue<char> temp;
-    if (!s.empty() && s.top() != '(' && hasPrecedence(op, s.top()) <= 0)
-    {
+    if (!s.empty() && s.top() != '(' && hasPrecedence(op, s.top()) <= 0) {
         output.push_back(s.top());
         s.pop();
     }
 
-    while (!s.empty() && s.top() != '(' && hasPrecedence(op, s.top()) <= 0)
-    {
+    while (!s.empty() && s.top() != '(' && hasPrecedence(op, s.top()) <= 0) {
         temp.push(s.top());
         s.pop();
     }
     s.push(op);
 
-    while (!temp.empty())
-    {
+    while (!temp.empty()) {
         output.push_back(temp.front());
         temp.pop();
     }
@@ -70,41 +67,31 @@ int main()
     int t;
     scanf("%d", &t);
     getchar();
-    while (t--)
-    {
+    while (t--) {
         char ch[1010];
         string input;
         output.clear();
         scanf(" %[^\n]", ch);
-        for (int i = 0; i < strlen(ch); i++)
-        {
-            if (ch[i] == '(')
-            {
+        for (int i = 0; i < strlen(ch); i++) {
+            if (ch[i] == '(') {
                 if (input.length() && isdigit(input[input.length() - 1]))
                     input += '#';
-            }
-            else if (isdigit(ch[i]))
-            {
+            } else if (isdigit(ch[i])) {
                 if (input.length() && input[input.length() - 1] == ')')
                     input += '#';
             }
             input += ch[i];
         }
 
-        for (size_t i = 0; i < input.length(); i++)
-        {
+        for (size_t i = 0; i < input.length(); i++) {
             if (isdigit(input[i]) || isalpha(input[i]))
                 output.push_back(input[i]);
-            else if (checkOperator(input[i]))
-            {
+            else if (checkOperator(input[i])) {
                 setOperator(input[i]);
-            }
-            else if (input[i] == '(')
+            } else if (input[i] == '(')
                 s.push('(');
-            else if (input[i] == ')')
-            {
-                while (!s.empty() && s.top() != '(')
-                {
+            else if (input[i] == ')') {
+                while (!s.empty() && s.top() != '(') {
                     output.push_back(s.top());
                     s.pop();
                 }
@@ -113,8 +100,7 @@ int main()
             }
         }
 
-        while (!s.empty())
-        {
+        while (!s.empty()) {
             output.push_back(s.top());
             s.pop();
         }

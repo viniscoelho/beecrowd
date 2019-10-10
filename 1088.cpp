@@ -5,17 +5,17 @@
 		Se for par, Carlos ganha; sen�o Marcelo ganha
 */
 
-#include <iostream>
+#include <algorithm>
 #include <cmath>
+#include <cstdio>
+#include <cstdlib>
+#include <iostream>
+#include <list>
+#include <map>
+#include <queue>
+#include <set>
 #include <string>
 #include <vector>
-#include <algorithm>
-#include <list>
-#include <set>
-#include <queue>
-#include <map>
-#include <cstdlib>
-#include <cstdio>
 #define mp make_pair
 #define pb push_back
 #define MAXV 100010
@@ -29,31 +29,27 @@ int number[MAXV], pos[MAXV];
 
 int main()
 {
-	ios::sync_with_stdio(false);
-	int a, n;
-	while (cin >> n && n)
-	{
-		int qtd = 0;
-		for (int i = 0; i < n; i++)
-		{
-			cin >> a;
-			number[i] = a - 1;
-			pos[a - 1] = i;
-		}
-		for (int i = 0; i < n; i++)
-		{
-			if (number[i] != i)
-			{
-				number[pos[i]] = number[i];
-				pos[number[i]] = pos[i];
-				number[i] = pos[i] = i;
-				qtd++;
-			}
-		}
-		if (qtd % 2 == 0)
-			cout << "Carlos\n";
-		else
-			cout << "Marcelo\n";
-	}
-	return 0;
+    ios::sync_with_stdio(false);
+    int a, n;
+    while (cin >> n && n) {
+        int qtd = 0;
+        for (int i = 0; i < n; i++) {
+            cin >> a;
+            number[i] = a - 1;
+            pos[a - 1] = i;
+        }
+        for (int i = 0; i < n; i++) {
+            if (number[i] != i) {
+                number[pos[i]] = number[i];
+                pos[number[i]] = pos[i];
+                number[i] = pos[i] = i;
+                qtd++;
+            }
+        }
+        if (qtd % 2 == 0)
+            cout << "Carlos\n";
+        else
+            cout << "Marcelo\n";
+    }
+    return 0;
 }

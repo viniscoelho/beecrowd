@@ -1,16 +1,16 @@
-#include <iostream>
-#include <cstdlib>
-#include <cstdio>
-#include <cmath>
+#include <algorithm>
 #include <climits>
+#include <cmath>
+#include <cstdio>
+#include <cstdlib>
+#include <iomanip>
+#include <iostream>
+#include <list>
+#include <map>
+#include <queue>
+#include <set>
 #include <string>
 #include <vector>
-#include <algorithm>
-#include <list>
-#include <set>
-#include <queue>
-#include <map>
-#include <iomanip>
 #define mp make_pair
 #define pb push_back
 #define MAXV 200100
@@ -28,13 +28,11 @@ int main()
     cin >> n >> d;
     vector<int> teams;
     string s;
-    while (cin >> tn)
-    {
+    while (cin >> tn) {
         cout << right << setfill(' ') << setw(3) << tn << ": ";
         double sec, temp = 0.0;
         bool flag = false;
-        for (int i = 0; i < n; i++)
-        {
+        for (int i = 0; i < n; i++) {
             cin >> s;
             if (flag)
                 continue;
@@ -46,11 +44,9 @@ int main()
         }
         if (flag)
             cout << "-\n";
-        else
-        {
+        else {
             double seg = round((temp - floor(temp)) * 60.0);
-            if (seg == 60.0)
-            {
+            if (seg == 60.0) {
                 temp = ceil(temp);
                 seg = 0.0;
             }

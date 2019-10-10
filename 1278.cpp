@@ -18,41 +18,38 @@ typedef pair<string, dd> sdd;
 
 int main()
 {
-	ios::sync_with_stdio(false);
-	int n = 0, t;
-	string word, buff;
-	while (cin >> t && t)
-	{
-		cin.ignore();
-		if (n++)
-			cout << "\n";
-		int m = 0;
-		vector<string> words;
-		REP(i, t)
-		{
-			getline(cin, word);
-			istringstream buffer(word);
-			int q = 0;
-			string nov;
-			while (buffer >> buff)
-			{
-				if (q++)
-					nov += " ";
-				nov += buff;
-			}
-			words.pb(nov);
-			m = max(m, int(nov.size()));
-		}
-		REP(i, t)
-		{
-			int c = 0, s = words[i].size();
-			while (s + c < m)
-			{
-				cout << " ";
-				c++;
-			}
-			cout << words[i] << "\n";
-		}
-	}
-	return 0;
+    ios::sync_with_stdio(false);
+    int n = 0, t;
+    string word, buff;
+    while (cin >> t && t) {
+        cin.ignore();
+        if (n++)
+            cout << "\n";
+        int m = 0;
+        vector<string> words;
+        REP(i, t)
+        {
+            getline(cin, word);
+            istringstream buffer(word);
+            int q = 0;
+            string nov;
+            while (buffer >> buff) {
+                if (q++)
+                    nov += " ";
+                nov += buff;
+            }
+            words.pb(nov);
+            m = max(m, int(nov.size()));
+        }
+        REP(i, t)
+        {
+            int c = 0, s = words[i].size();
+            while (s + c < m) {
+                cout << " ";
+                c++;
+            }
+            cout << words[i] << "\n";
+        }
+    }
+    return 0;
 }

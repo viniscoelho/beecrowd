@@ -1,17 +1,17 @@
-#include <iostream>
-#include <cstdlib>
-#include <cmath>
-#include <climits>
-#include <string>
-#include <cstring>
-#include <sstream>
-#include <vector>
 #include <algorithm>
+#include <climits>
+#include <cmath>
+#include <cstdlib>
+#include <cstring>
+#include <iostream>
 #include <list>
-#include <set>
-#include <queue>
 #include <map>
+#include <queue>
+#include <set>
+#include <sstream>
+#include <string>
 #include <unordered_set>
+#include <vector>
 #define mp make_pair
 #define pb push_back
 #define MAXV 200100
@@ -29,26 +29,19 @@ int main()
 {
     ios::sync_with_stdio(false);
     string str;
-    while (cin >> str)
-    {
+    while (cin >> str) {
         int a = -1, b = -1, c = -1;
-        for (int i = str.size() - 1; i >= 0; i--)
-        {
+        for (int i = str.size() - 1; i >= 0; i--) {
             string s = "";
             while (i >= 0 && isdigit(str[i]))
                 s += str[i--];
-            if (c == -1)
-            {
+            if (c == -1) {
                 stringstream buffer(s);
                 buffer >> c;
-            }
-            else if (b == -1)
-            {
+            } else if (b == -1) {
                 stringstream buffer(s);
                 buffer >> b;
-            }
-            else if (a == -1)
-            {
+            } else if (a == -1) {
                 stringstream buffer(s);
                 buffer >> a;
             }

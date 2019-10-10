@@ -1,18 +1,18 @@
-#include <iostream>
-#include <iomanip>
-#include <cstdlib>
-#include <cmath>
-#include <climits>
-#include <string>
-#include <cstring>
-#include <sstream>
-#include <vector>
 #include <algorithm>
+#include <climits>
+#include <cmath>
+#include <cstdlib>
+#include <cstring>
+#include <iomanip>
+#include <iostream>
 #include <list>
-#include <set>
-#include <queue>
-#include <stack>
 #include <map>
+#include <queue>
+#include <set>
+#include <sstream>
+#include <stack>
+#include <string>
+#include <vector>
 #define mp make_pair
 #define pb push_back
 #define MAXV 200100
@@ -30,12 +30,10 @@ int main()
 {
     ios::sync_with_stdio(false);
     int a, b, x, y;
-    while (cin >> a >> b)
-    {
+    while (cin >> a >> b) {
         vector<int> matches;
         int64 pontos = 0;
-        for (int i = 0; i < a; i++)
-        {
+        for (int i = 0; i < a; i++) {
             cin >> x >> y;
             if (x - y <= 0)
                 matches.pb(abs(x - y));
@@ -43,15 +41,11 @@ int main()
                 pontos += 3;
         }
         sort(matches.begin(), matches.end());
-        for (int i = 0; i < matches.size(); i++)
-        {
-            if (b != 0 && b - (matches[i] + 1) >= 0)
-            {
+        for (int i = 0; i < matches.size(); i++) {
+            if (b != 0 && b - (matches[i] + 1) >= 0) {
                 b -= (matches[i] + 1);
                 pontos += 3;
-            }
-            else if (b - matches[i] >= 0)
-            {
+            } else if (b - matches[i] >= 0) {
                 b -= matches[i];
                 pontos++;
             }

@@ -18,30 +18,27 @@ vi perm(MAXN);
 
 int main()
 {
-	int num, n;
-	while (scanf("%d", &num) && num)
-	{
-		while (scanf("%d", &perm[0]) && perm[0])
-		{
-			stack<int> temp;
-			for (int i = 1; i < num; ++i)
-				scanf("%d", &perm[i]);
-			int pos = 1;
-			for (int i = 0; i < num; ++i)
-			{
-				while (pos <= perm[i])
-					temp.push(pos++);
-				if (!temp.empty() && temp.top() == perm[i])
-					temp.pop();
-				else
-					break;
-			}
-			if (!temp.empty())
-				printf("No\n");
-			else
-				printf("Yes\n");
-		}
-		printf("\n");
-	}
-	return 0;
+    int num, n;
+    while (scanf("%d", &num) && num) {
+        while (scanf("%d", &perm[0]) && perm[0]) {
+            stack<int> temp;
+            for (int i = 1; i < num; ++i)
+                scanf("%d", &perm[i]);
+            int pos = 1;
+            for (int i = 0; i < num; ++i) {
+                while (pos <= perm[i])
+                    temp.push(pos++);
+                if (!temp.empty() && temp.top() == perm[i])
+                    temp.pop();
+                else
+                    break;
+            }
+            if (!temp.empty())
+                printf("No\n");
+            else
+                printf("Yes\n");
+        }
+        printf("\n");
+    }
+    return 0;
 }

@@ -1,10 +1,10 @@
-#include <cstring>
-#include <cstdlib>
 #include <cstdio>
-#include <iostream>
-#include <string>
+#include <cstdlib>
+#include <cstring>
 #include <iomanip>
+#include <iostream>
 #include <map>
+#include <string>
 #define mp make_pair
 #define INF 0x3f3f3f3f
 
@@ -16,8 +16,7 @@ int main()
     double a, b, c = 0, r = 0, s = 0, t = 0;
     char o;
     cin >> a;
-    while (a--)
-    {
+    while (a--) {
         cin >> b >> o;
         if (o == 'C')
             c += b;

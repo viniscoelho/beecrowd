@@ -10,22 +10,26 @@ typedef pair<int, int> ii;
 typedef pair<int, string> is;
 typedef pair<ii, is> ih;
 
-int main(){
+int main()
+{
     ios::sync_with_stdio(false);
     string resp;
-	int t = 0;
-    while ( getline(cin, resp) ){
-		if ( t > 0 ) cout << "\n";
-		unordered_map<int, int> bib;
-		unordered_map<int, int>::iterator it;
-		priority_queue<ii> pq;
-		for ( int i = 0; i < resp.size(); ++i ) bib[int(resp[i])]++;
-		for ( it = bib.begin(); it != bib.end(); ++it ) pq.push( mp(-it->second, it->first) );
-		while ( !pq.empty() ){
-			cout << pq.top().second << " " << -pq.top().first << "\n";
-			pq.pop();
-		}
-		t++;
+    int t = 0;
+    while (getline(cin, resp)) {
+        if (t > 0)
+            cout << "\n";
+        unordered_map<int, int> bib;
+        unordered_map<int, int>::iterator it;
+        priority_queue<ii> pq;
+        for (int i = 0; i < resp.size(); ++i)
+            bib[int(resp[i])]++;
+        for (it = bib.begin(); it != bib.end(); ++it)
+            pq.push(mp(-it->second, it->first));
+        while (!pq.empty()) {
+            cout << pq.top().second << " " << -pq.top().first << "\n";
+            pq.pop();
+        }
+        t++;
     }
     return 0;
 }
