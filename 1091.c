@@ -3,11 +3,9 @@
 int main()
 {
     int i, j, k, m, n, x, y;
-    while (scanf("%d", &k) && k)
-    {
+    while (scanf("%d", &k) && k) {
         scanf("%d %d", &n, &m);
-        for (i = 0; i < k; i++)
-        {
+        for (i = 0; i < k; i++) {
             scanf("%d %d", &x, &y);
             if (x == n || y == m)
                 printf("divisa\n");
