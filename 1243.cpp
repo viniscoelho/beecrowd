@@ -21,7 +21,7 @@ char word[110];
 int main()
 {
 	string a;
-	while (gets(word))
+	while (scanf(" %[^\n]", word))
 	{
 		istringstream str(word);
 		int sum = 0, t = 0;
@@ -52,7 +52,7 @@ int main()
 			}
 		}
 		if (!t)
-			puts("250") ";
+			puts("250");
 				else if (t && sum / t <= 3) puts("250");
 		else if (t && sum / t <= 5)
 			puts("500");

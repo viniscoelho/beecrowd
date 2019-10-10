@@ -27,7 +27,7 @@ int main()
 		int sum = 0, resp_size;
 		for (int i = 0; i < s; ++i)
 		{
-			gets(resp);
+			scanf(" %[^\n]", resp);
 			resp_size = strlen(resp);
 			for (int k = 0; k < resp_size; ++k)
 				sum += i + k + int(resp[k]) - 65;

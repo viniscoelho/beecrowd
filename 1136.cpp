@@ -5,23 +5,12 @@
 		Caso contrario, nao e possivel
 */
 
-#include <iostream>
-#include <algorithm>
-#include <queue>
-#include <vector>
-#include <list>
-#include <tr1/unordered_set>
-#include <string>
-#include <map>
-#include <sstream>
-#include <iomanip>
-#include <cstdio>
+#include <bits/stdc++.h>
 #define mp make_pair
 #define pb push_back
 #define MAX 220
 
 using namespace std;
-using namespace tr1;
 
 typedef pair<int, int> ii;
 typedef vector<int> vi;

@@ -1,15 +1,4 @@
-#include <iostream>
-#include <algorithm>
-#include <list>
-#include <cmath>
-#include <queue>
-#include <vector>
-#include <cstdio>
-#include <climits>
-#include <cstdlib>
-#include <deque>
-#include <sstream>
-#include <tr1/unordered_map>
+#include <bits/stdc++.h>
 #define FOR(i, a, b) for (int i = a; i <= b; ++i)
 #define RFOR(i, b, a) for (int i = b; i >= a; --i)
 #define REP(i, N) for (int i = 0; i < N; ++i)
@@ -20,7 +9,6 @@
 #define mp make_pair
 
 using namespace std;
-using namespace tr1;
 
 typedef long long int64;
 typedef pair<int, int> ii;

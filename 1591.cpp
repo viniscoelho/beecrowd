@@ -1,17 +1,8 @@
-#include <iostream>
-#include <cmath>
-#include <algorithm>
-#include <map>
-#include <stack>
-#include <queue>
-#include <vector>
-#include <iomanip>
-#include <tr1/unordered_map>
+#include <bits/stdc++.h>
 #define pb push_back
 #define mp make_pair
 
 using namespace std;
-using namespace tr1;
 
 typedef long long int64;
 
@@ -81,7 +72,7 @@ int main()
 			cin >> pz;
 			cout << bib[pz] << endl;
 		}
-				
+
 	}
 	return 0;
 }

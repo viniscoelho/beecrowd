@@ -1,18 +1,9 @@
-#include <iostream>
-#include <algorithm>
-#include <sstream>
-#include <string>
-#include <vector>
-#include <deque>
-#include <queue>
-#include <cctype>
-#include <tr1/unordered_map>
+#include <bits/stdc++.h>
 #define mp make_pair
 #define pf push_front
 #define pb push_back
 
 using namespace std;
-using namespace tr1;
 
 typedef long long int64;
 typedef pair<int, int> ii;

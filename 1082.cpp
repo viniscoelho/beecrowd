@@ -5,21 +5,12 @@
 		a maior componente fortemente conexa
 */
 
-#include <iostream>
-#include <cmath>
-#include <string>
-#include <tr1/unordered_map>
-#include <vector>
-#include <algorithm>
-#include <list>
-#include <set>
-#include <queue>
+#include <bits/stdc++.h>
 #define mp make_pair
 #define pb push_back
 #define MAXV 300
 
 using namespace std;
-using namespace tr1;
 
 typedef vector<int> vi;
 

@@ -1,25 +1,4 @@
-#include <iostream>
-#include <algorithm>
-#include <map>
-#include <set>
-#include <list>
-#include <stack>
-#include <cmath>
-#include <queue>
-#include <ctime>
-#include <cfloat>
-#include <vector>
-#include <string>
-#include <cstdio>
-#include <bitset>
-#include <climits>
-#include <cstdlib>
-#include <cstring>
-#include <cassert>
-#include <iomanip>
-#include <sstream>
-#include <utility>
-#include <tr1/unordered_map>
+#include <bits/stdc++.h>
 #define FOR(i, a, b) for (int i = a; i <= b; ++i)
 #define RFOR(i, b, a) for (int i = b; i >= a; --i)
 #define REP(i, N) for (int i = 0; i < N; ++i)
@@ -30,7 +9,6 @@
 #define mp make_pair
 
 using namespace std;
-using namespace tr1;
 
 typedef vector<int> vi;
 typedef long long int64;
@@ -43,13 +21,14 @@ char word[MAXN];
 int main()
 {
 	int a, t, n = 0;
-	while (gets(word))
+	while (scanf(" %[^\n]", word))
 	{
 		vector<char> l;
 		unordered_map<char, int> letters;
 		unordered_map<char, int>::iterator it;
 		REP(k, strlen(word))
-		if (word[k] != ' ') letters[word[k]] = 0;
+		if (word[k] != ' ')
+			letters[word[k]] = 0;
 		for (it = letters.begin(); it != letters.end(); it++)
 			l.pb(it->first);
 		sort(l.begin(), l.end());

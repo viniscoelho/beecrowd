@@ -1,24 +1,4 @@
-#include <iostream>
-#include <algorithm>
-#include <map>
-#include <set>
-#include <list>
-#include <stack>
-#include <cmath>
-#include <queue>
-#include <ctime>
-#include <cfloat>
-#include <vector>
-#include <string>
-#include <cstdio>
-#include <bitset>
-#include <climits>
-#include <cstdlib>
-#include <cstring>
-#include <cassert>
-#include <iomanip>
-#include <sstream>
-#include <utility>
+#include <bits/stdc++.h>
 #define FOR(i, a, b) for (int i = a; i <= b; ++i)
 #define RFOR(i, b, a) for (int i = b; i >= a; --i)
 #define REP(i, N) for (int i = 0; i < N; ++i)
@@ -58,7 +38,7 @@ int main()
 	fibonacci();
 	while (t--)
 	{
-		gets(str);
+		scanf(" %[^\n]", str);
 		s = strlen(str), ans = 0;
 		if (s == 1)
 			ans = str[0] - 48;

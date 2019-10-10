@@ -1,28 +1,4 @@
-#include <iostream>
-#include <algorithm>
-#include <functional>
-#include <locale>
-#include <map>
-#include <set>
-#include <list>
-#include <stack>
-#include <cctype>
-#include <cmath>
-#include <queue>
-#include <ctime>
-#include <cfloat>
-#include <vector>
-#include <string>
-#include <cstdio>
-#include <bitset>
-#include <climits>
-#include <cstdlib>
-#include <cstring>
-#include <cassert>
-#include <iomanip>
-#include <sstream>
-#include <utility>
-#include <tr1/unordered_map>
+#include <bits/stdc++.h>
 #define FOR(i, a, b) for (int i = a; i <= b; ++i)
 #define RFOR(i, b, a) for (int i = b; i >= a; --i)
 #define REP(i, N) for (int i = 0; i < N; ++i)
@@ -31,7 +7,6 @@
 #define mp make_pair
 
 using namespace std;
-using namespace tr1;
 
 typedef long long int64;
 
@@ -39,7 +14,7 @@ char word[60];
 
 int main()
 {
-	while (gets(word))
+	while (scanf(" %[^\n]", word))
 	{
 		int word_size = strlen(word);
 		string resp;

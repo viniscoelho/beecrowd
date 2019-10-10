@@ -1,20 +1,10 @@
-#include <cstdio>
-#include <stack>
-#include <queue>
-#include <list>
-#include <iostream>
-#include <algorithm>
-#include <iomanip>
-#include <cctype>
-#include <map>
-//#include <unordered_map>
+#include <bits/stdc++.h>
 #define mp make_pair
 #define pb push_back
 #define pf push_front
 #define LSOne(S) (S & (-S))
 
 using namespace std;
-//using namespace tr1;
 
 void create(vector<int> &v, int n)
 {

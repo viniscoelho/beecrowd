@@ -15,7 +15,7 @@ char str1[55], str2[55];
 
 int LCS(int a, int b){
 	if ( !a || !b ) return 0;
-	
+
 	int *curr = new int [b];
 	int *prev = new int [b];
 	int *swap = NULL;
@@ -40,8 +40,8 @@ int LCS(int a, int b){
 }
 
 int main(){
-	while ( gets(str1) ){
-		gets(str2);
+	while ( scanf(" %[^\n]", str1) ){
+		scanf(" %[^\n]", str2);
 		int str1_size = strlen(str1), str2_size = strlen(str2);
 		for ( int i = 0; i < str1_size; ++i ) if ( str1[i] == ' ' ) str1[i] = '0';
 		for ( int i = 0; i < str2_size; ++i ) if ( str2[i] == ' ' ) str2[i] = '0';

@@ -1,17 +1,8 @@
-#include <iostream>
-#include <cstdlib>
-#include <vector>
-#include <algorithm>
-#include <cstring>
-#include <string>
-#include <queue>
-#include <cstdio>
-#include <tr1/unordered_map>
+#include <bits/stdc++.h>
 #define mp make_pair
 #define pb push_back
 
 using namespace std;
-using namespace tr1;
 
 typedef pair<int, int> ii;
 typedef pair<int, char> ic;
@@ -30,7 +21,7 @@ int main()
 		unordered_map<char, int> bib;
 		unordered_map<char, int>::iterator u;
 		pair<unordered_map<char, int>::iterator, bool> ret;
-		gets(word);
+		scanf(" %[^\n]", word);
 		int word_size = strlen(word);
 		for (int i = 0; i < word_size; ++i)
 		{

@@ -1,16 +1,4 @@
-#include <cstring>
-#include <cstdlib>
-#include <cstdio>
-#include <iostream>
-#include <string>
-#include <iomanip>
-#include <cmath>
-#include <map>
-#include <queue>
-#include <vector>
-#include <list>
-#include <climits>
-#include <algorithm>
+#include <bits/stdc++.h>
 #define mp make_pair
 #define pb push_back
 #define MAX 210

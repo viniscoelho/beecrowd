@@ -75,7 +75,7 @@ int main()
         char ch[1010];
         string input;
         output.clear();
-        gets(ch);
+        scanf(" %[^\n]", ch);
         for (int i = 0; i < strlen(ch); i++)
         {
             if (ch[i] == '(')

@@ -25,7 +25,7 @@ int main()
 	char perm[20];
 	while (n--)
 	{
-		gets(perm);
+		scanf(" %[^\n]", perm);
 		int tam = strlen(perm);
 		sort(perm, perm + tam);
 		do

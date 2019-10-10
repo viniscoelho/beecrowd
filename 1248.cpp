@@ -1,20 +1,8 @@
-#include <iostream>
-#include <cstdio>
-#include <algorithm>
-#include <vector>
-#include <list>
-#include <queue>
-#include <stack>
-#include <string>
-#include <cstring>
-#include <cmath>
-#include <map>
-#include <tr1/unordered_map>
+#include <bits/stdc++.h>
 #define pb push_back
 #define mp make_pair
 
 using namespace std;
-using namespace tr1;
 
 int main()
 {

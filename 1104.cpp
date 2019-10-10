@@ -1,14 +1,8 @@
-#include <iostream>
-#include <cmath>
-#include <vector>
-#include <tr1/unordered_map>
-#include <cstdio>
-#include <algorithm>
+#include <bits/stdc++.h>
 #define pb push_back
 #define mp make_pair
 
 using namespace std;
-using namespace tr1;
 
 typedef pair<int, int> prime_pot;
 typedef long long int64;

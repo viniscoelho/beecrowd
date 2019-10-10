@@ -1,12 +1,7 @@
-#include <iostream>
-#include <queue>
-#include <cstdio>
-#include <cstdlib>
-#include <tr1/unordered_map>
+#include <bits/stdc++.h>
 #define mp make_pair
 
 using namespace std;
-using namespace tr1;
 
 int qtd = 0;
 
@@ -33,7 +28,7 @@ class ArvoreBinaria{
 		bool Busca (No*, int);
 		void PreOrdem (No*);
 		void EmOrdem (No*);
-		void PosOrdem (No*); 
+		void PosOrdem (No*);
 		void Remove (No*, No*, int);
 		void Remover(No*);
 	public:

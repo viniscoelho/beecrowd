@@ -18,7 +18,7 @@ int main(){
 	scanf("%d", &h);
 	getchar();
 	while ( h-- ){
-		gets(a);
+		scanf(" %[^\n]", a);
 		int a_size = strlen(a);
 		for ( int i = 0; i < a_size; ++i ){
 			if ( a[i] == '0' ){

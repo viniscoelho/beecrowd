@@ -1,19 +1,4 @@
-#include <iostream>
-#include <iomanip>
-#include <sstream>
-#include <cstdlib>
-#include <cstdio>
-#include <cmath>
-#include <climits>
-#include <string>
-#include <vector>
-#include <algorithm>
-#include <list>
-#include <set>
-#include <queue>
-#include <map>
-#include <unordered_set>
-#include <unordered_map>
+#include <bits/stdc++.h>
 #define mp make_pair
 #define pb push_back
 #define MAXV 200100
@@ -22,7 +7,6 @@
                     .str()
 
 using namespace std;
-//using namespace tr1;
 
 typedef vector<int> vi;
 typedef pair<int, int> ii;

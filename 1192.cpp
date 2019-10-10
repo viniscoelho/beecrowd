@@ -21,7 +21,7 @@ int main(){
 	scanf("%d", &n);
 	getchar();
 	while ( n-- ){
-		gets(a);
+		scanf(" %[^\n]", a);
 		int x = a[0]-48, y = a[2]-48;
 		if ( a[0] == a[2] ) printf("%d\n", x*y);
 		else if ( a[1] <= 'Z' ) printf("%d\n", y-x);
