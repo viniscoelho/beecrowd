@@ -23,16 +23,16 @@ int main()
 	scanf("%d", &n);
 	getchar();
 	char perm[20];
-	while ( n-- )
+	while (n--)
 	{
 		gets(perm);
 		int tam = strlen(perm);
-		sort(perm, perm+tam);
+		sort(perm, perm + tam);
 		do
 		{
 			puts(perm);
-		} while ( next_permutation ( perm, perm+tam) );
+		} while (next_permutation(perm, perm + tam));
 		printf("\n");
-    }
-    return 0;
+	}
+	return 0;
 }

@@ -22,20 +22,23 @@ typedef pair<int, int> ii;
 typedef pair<int, ii> iii;
 typedef long long int64;
 
-struct node{
+struct node
+{
 	int pontos, vitorias, gols, pos;
 	node(int pontos = 0, int vitorias = 0, int gols = 0, int pos = 0) : pontos(pontos), vitorias(vitorias), gols(gols), pos(pos) {}
 };
 
-int main(){
+int main()
+{
 	ios::sync_with_stdio(false);
 	int n;
 	cin >> n;
 	int64 a;
-	while ( n-- )
+	while (n--)
 	{
 		cin >> a;
-		if ( a & (1 << 0) ) a++;
+		if (a & (1 << 0))
+			a++;
 		a /= 2;
 		cout << a << endl;
 	}

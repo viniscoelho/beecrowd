@@ -11,14 +11,19 @@
 
 using namespace std;
 
-int main(){
+int main()
+{
 	double n, a;
-	for ( int i = 0; i < 100; ++i ){
+	for (int i = 0; i < 100; ++i)
+	{
 		scanf("%lf", &n);
-		if ( n <= 10 ){
-			if ( ceil (n) != floor(n) ) printf("A[%d] = %.1lf\n", i, n);
-			else printf("A[%d] = %.0lf\n", i, n);
+		if (n <= 10)
+		{
+			if (ceil(n) != floor(n))
+				printf("A[%d] = %.1lf\n", i, n);
+			else
+				printf("A[%d] = %.0lf\n", i, n);
 		}
 	}
-    return 0;
+	return 0;
 }

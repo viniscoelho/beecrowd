@@ -29,7 +29,7 @@ int main()
 {
     ios::sync_with_stdio(false);
     string s;
-    while ( cin >> s )
+    while (cin >> s)
     {
         char watch[15][70] = {
             {" ____________________________________________"},
@@ -46,41 +46,58 @@ int main()
             {"|   |   32    16    8     4     2     1  |   |_"},
             {"|   |____________________________________|   |_)"},
             {"|                                            |"},
-            {"|____________________________________________|"}
-        };
+            {"|____________________________________________|"}};
 
-        int hr = (s[0]-48)*10 + (s[1]-48);
-        int min = (s[3]-48)*10 + (s[4]-48);
-        
-        if ( hr-8 >= 0 ) hr -= 8;
-        else watch[6][8] = ' ';
+        int hr = (s[0] - 48) * 10 + (s[1] - 48);
+        int min = (s[3] - 48) * 10 + (s[4] - 48);
 
-        if ( hr-4 >= 0 ) hr -= 4;
-        else watch[6][18] = ' ';
+        if (hr - 8 >= 0)
+            hr -= 8;
+        else
+            watch[6][8] = ' ';
 
-        if ( hr-2 >= 0 ) hr -= 2;
-        else watch[6][28] = ' ';
+        if (hr - 4 >= 0)
+            hr -= 4;
+        else
+            watch[6][18] = ' ';
 
-        if ( !hr ) watch[6][38] = ' ';
+        if (hr - 2 >= 0)
+            hr -= 2;
+        else
+            watch[6][28] = ' ';
 
-        if ( min-32 >= 0 ) min -= 32;
-        else watch[9][8] = ' ';
+        if (!hr)
+            watch[6][38] = ' ';
 
-        if ( min-16 >= 0 ) min -= 16;
-        else watch[9][14] = ' ';
+        if (min - 32 >= 0)
+            min -= 32;
+        else
+            watch[9][8] = ' ';
 
-        if ( min-8 >= 0 ) min -= 8;
-        else watch[9][20] = ' ';
+        if (min - 16 >= 0)
+            min -= 16;
+        else
+            watch[9][14] = ' ';
 
-        if ( min-4 >= 0 ) min -= 4;
-        else watch[9][26] = ' ';
+        if (min - 8 >= 0)
+            min -= 8;
+        else
+            watch[9][20] = ' ';
 
-        if ( min-2 >= 0 ) min -= 2;
-        else watch[9][32] = ' ';
+        if (min - 4 >= 0)
+            min -= 4;
+        else
+            watch[9][26] = ' ';
 
-        if ( !min ) watch[9][38] = ' ';
+        if (min - 2 >= 0)
+            min -= 2;
+        else
+            watch[9][32] = ' ';
 
-        for ( int i = 0; i < 15; i++ )
+        if (!min)
+            watch[9][38] = ' ';
+
+        for (int i = 0; i < 15; i++)
             cout << watch[i] << endl;
         cout << endl;
     }

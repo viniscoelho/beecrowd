@@ -25,16 +25,19 @@ const double EPS = 1e-10;
 
 char comm[100];
 
-int main(){
+int main()
+{
 	int a, s, t;
-	while ( scanf("%d", &t) != EOF ){
+	while (scanf("%d", &t) != EOF)
+	{
 		int a = 1, b = 1, c = 0;
-		while ( a ){
+		while (a)
+		{
 			a = b % t;
-			b = (b*10 + 1) % t;
+			b = (b * 10 + 1) % t;
 			c++;
 		}
 		printf("%d\n", c);
 	}
-    return 0;
+	return 0;
 }

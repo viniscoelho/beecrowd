@@ -11,14 +11,16 @@
 
 using namespace std;
 
-int main(){
+int main()
+{
 	ios::sync_with_stdio(false);
 	int n;
 	double a;
 	cin >> n;
-	while ( n-- ){
+	while (n--)
+	{
 		cin >> a;
-		cout << fixed << setprecision(0.0) << floor((pow(2, a)/12)/1000) << " kg\n";
+		cout << fixed << setprecision(0.0) << floor((pow(2, a) / 12) / 1000) << " kg\n";
 	}
-    return 0;
+	return 0;
 }

@@ -10,14 +10,18 @@
 
 using namespace std;
 
-int main(){
-	ios::sync_with_stdio(false);	
+int main()
+{
+	ios::sync_with_stdio(false);
 	int a = 1, b, pos, m = -INF;
-	while ( a < 101 ){
+	while (a < 101)
+	{
 		cin >> b;
-		if ( b > m ) pos = a, m = b;
+		if (b > m)
+			pos = a, m = b;
 		a++;
 	}
-	cout << m << "\n" << pos << "\n";
-    return 0;
+	cout << m << "\n"
+		 << pos << "\n";
+	return 0;
 }

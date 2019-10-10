@@ -20,7 +20,8 @@ typedef pair<ii, int> iii;
 
 unordered_map<char, char> bib;
 
-int main(){
+int main()
+{
 	ios::sync_with_stdio(false);
 	bib['a'] = 'n';
 	bib['b'] = 'o';
@@ -49,13 +50,19 @@ int main(){
 	bib['y'] = 'l';
 	bib['z'] = 'm';
 	string word;
-	while ( getline(cin, word) ){
-		for ( int i = 0; i < word.size(); ++i ){
-			if ( isalpha(word[i]) ){
-				if ( islower(word[i]) ) cout << bib[word[i]];
-				else cout << char(toupper(bib[tolower(word[i])]));
+	while (getline(cin, word))
+	{
+		for (int i = 0; i < word.size(); ++i)
+		{
+			if (isalpha(word[i]))
+			{
+				if (islower(word[i]))
+					cout << bib[word[i]];
+				else
+					cout << char(toupper(bib[tolower(word[i])]));
 			}
-			else cout << word[i];
+			else
+				cout << word[i];
 		}
 		cout << "\n";
 	}

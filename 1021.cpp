@@ -2,64 +2,75 @@
 
 using namespace std;
 
-int main(){
-    ios::sync_with_stdio(false);
+int main()
+{
+	ios::sync_with_stdio(false);
 	double v, cem = 0, cinq = 0, vin = 0, dez = 0, cinc = 0, dois = 0;
 	double um = 0, mcinq = 0, mvintc = 0, mdez = 0, mcinc = 0;
-    cin >> v;
-	int div = v/100;
+	cin >> v;
+	int div = v / 100;
 	double mum = v;
-	if ( div >= 1 ){
+	if (div >= 1)
+	{
 		cem = div;
-		mum -= 100*cem;
+		mum -= 100 * cem;
 	}
-	div = mum/50;
-	if ( div >= 1 ){
+	div = mum / 50;
+	if (div >= 1)
+	{
 		cinq = div;
-		mum -= 50*cinq;
+		mum -= 50 * cinq;
 	}
-	div = mum/20;
-	if ( div >= 1 ){
+	div = mum / 20;
+	if (div >= 1)
+	{
 		vin = div;
-		mum -= 20*vin;
+		mum -= 20 * vin;
 	}
-	div = mum/10;
-	if ( div >= 1 ){
+	div = mum / 10;
+	if (div >= 1)
+	{
 		dez = div;
-		mum -= 10*dez;
+		mum -= 10 * dez;
 	}
-	div = mum/5;
-	if ( div >= 1 ){
+	div = mum / 5;
+	if (div >= 1)
+	{
 		cinc = div;
-		mum -= 5*cinc;
+		mum -= 5 * cinc;
 	}
-	div = mum/2;
-	if ( div >= 1 ){
+	div = mum / 2;
+	if (div >= 1)
+	{
 		dois = div;
-		mum -= 2*dois;
+		mum -= 2 * dois;
 	}
 	mum *= 100;
-	um = div = mum/100;
-	mum -= um*100;
-	div = mum/50;
-	if ( div >= 1 ){
+	um = div = mum / 100;
+	mum -= um * 100;
+	div = mum / 50;
+	if (div >= 1)
+	{
 		mcinq = div;
-		mum -= 50*mcinq;
+		mum -= 50 * mcinq;
 	}
-	div = mum/25;
-	if ( div >= 1 ){
+	div = mum / 25;
+	if (div >= 1)
+	{
 		mvintc = div;
-		mum -= 25*mvintc;
+		mum -= 25 * mvintc;
 	}
-	div = mum/10;
-	if ( div >= 1 ){
+	div = mum / 10;
+	if (div >= 1)
+	{
 		mdez = div;
-		mum -= 10*mdez;
+		mum -= 10 * mdez;
 	}
-	div = mum/5;
-	if ( div >= 1 ){
+	div = mum / 5;
+	if (div >= 1)
+	{
 		mcinc = div;
-		mum -= 5*mcinc;
+		mum -= 5 * mcinc;
 	}
 	cout << "NOTAS:\n";
 	cout << cem << " nota(s) de R$ 100.00\n";
@@ -75,6 +86,6 @@ int main(){
 	cout << mdez << " moeda(s) de R$ 0.10\n";
 	cout << mcinc << " moeda(s) de R$ 0.05\n";
 	cout << mum << " moeda(s) de R$ 0.01\n";
-	
-    return 0;
+
+	return 0;
 }

@@ -22,23 +22,25 @@ typedef pair<int, ii> iii;
 typedef pair<iii, int> i4;
 typedef long long int64;
 
-struct node{
+struct node
+{
 	int pontos, vitorias, gols, pos;
 	node(int pontos = 0, int vitorias = 0, int gols = 0, int pos = 0) : pontos(pontos), vitorias(vitorias), gols(gols), pos(pos) {}
 };
 
-int main(){
+int main()
+{
 	ios::sync_with_stdio(false);
 	int n, a, b, p;
 	cin >> n;
 	string num;
-	while ( n-- )
+	while (n--)
 	{
 		cin >> a >> b;
 		string s;
 		map<string, node> times;
 		map<int, string> resp;
-		for ( int i = 0; i < a; i++ )
+		for (int i = 0; i < a; i++)
 		{
 			cin >> s;
 			times[s] = node(0, 0, 0, i);
@@ -46,18 +48,18 @@ int main(){
 		}
 		string t1, t2;
 		int p1, p2;
-		for ( int i = 0; i < b; i++ )
+		for (int i = 0; i < b; i++)
 		{
 			cin >> p1 >> t1;
 			times[t1].gols += p1;
 			cin >> p2 >> t2;
 			times[t2].gols += p2;
-			if ( p1 > p2 )
+			if (p1 > p2)
 			{
 				times[t1].pontos += 3;
 				times[t1].vitorias++;
 			}
-			else if ( p2 > p1 )
+			else if (p2 > p1)
 			{
 				times[t2].pontos += 3;
 				times[t2].vitorias++;
@@ -70,16 +72,15 @@ int main(){
 		}
 		map<string, node>::iterator it;
 		priority_queue<i4> pq;
-		for ( it = times.begin(); it != times.end(); it++ )
+		for (it = times.begin(); it != times.end(); it++)
 		{
 			pq.push(mp(mp(it->second.pontos, mp(it->second.vitorias, it->second.gols)), -it->second.pos));
 		}
-		while ( !pq.empty() )
+		while (!pq.empty())
 		{
 			cout << resp[-pq.top().second] << "\n";
 			pq.pop();
 		}
-
 	}
 	return 0;
 }

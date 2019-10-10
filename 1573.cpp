@@ -25,7 +25,7 @@ typedef long long int64;
 
 typedef pair<int, string> is;
 
-int readInt ()
+int readInt()
 {
     bool minus = false;
     int result = 0;
@@ -33,28 +33,36 @@ int readInt ()
     ch = getchar_unlocked();
     while (true)
     {
-        if (ch == '-') break;
-        if (ch >= '0' && ch <= '9') break;
+        if (ch == '-')
+            break;
+        if (ch >= '0' && ch <= '9')
+            break;
         ch = getchar_unlocked();
     }
-    if (ch == '-') minus = true; else result = ch-'0';
+    if (ch == '-')
+        minus = true;
+    else
+        result = ch - '0';
     while (true)
     {
         ch = getchar_unlocked();
-        if (ch < '0' || ch > '9') break;
-        result = result*10 + (ch - '0');
+        if (ch < '0' || ch > '9')
+            break;
+        result = result * 10 + (ch - '0');
     }
-    if (minus) return -result;
-    else return result;
+    if (minus)
+        return -result;
+    else
+        return result;
 }
 
 int main()
 {
     ios::sync_with_stdio(false);
     int a, b, c;
-    while ( cin >> a >> b >> c && a + b + c )
+    while (cin >> a >> b >> c && a + b + c)
     {
-        cout << fixed << setprecision(0) << floor(cbrt(a*b*c)) << endl;
+        cout << fixed << setprecision(0) << floor(cbrt(a * b * c)) << endl;
     }
     return 0;
 }

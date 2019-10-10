@@ -10,13 +10,15 @@
 
 using namespace std;
 
-int main(){
-	ios::sync_with_stdio(false);	
+int main()
+{
+	ios::sync_with_stdio(false);
 	int i = 1, j = 60;
 	cout << "I=" << i << " J=" << j << "\n";
-	while ( j ){
+	while (j)
+	{
 		i += 3, j -= 5;
 		cout << "I=" << i << " J=" << j << "\n";
 	}
-    return 0;
+	return 0;
 }

@@ -19,13 +19,14 @@ using namespace std;
 typedef vector<int> vi;
 typedef pair<int, string> is;
 
-int main(){
+int main()
+{
 	ios::sync_with_stdio(false);
 	string name;
 	double a, b;
 	getline(cin, name);
 	cin >> a >> b;
-	cout << "TOTAL = R$ " << fixed << setprecision(2) << a + b*0.15 << "\n";
-	
+	cout << "TOTAL = R$ " << fixed << setprecision(2) << a + b * 0.15 << "\n";
+
 	return 0;
 }

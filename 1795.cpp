@@ -20,7 +20,8 @@ typedef vector<int> vi;
 typedef pair<int, int> ii;
 typedef long long int64;
 
-int main(){
+int main()
+{
     ios::sync_with_stdio(false);
     int n;
     cin >> n;

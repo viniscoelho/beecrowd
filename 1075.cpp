@@ -9,11 +9,13 @@
 
 using namespace std;
 
-int main(){
-	ios::sync_with_stdio(false);	
+int main()
+{
+	ios::sync_with_stdio(false);
 	int a, b;
 	cin >> a;
-	for ( int i = 1; i <= 10000; ++i )
-		if ( i % a == 2 ) cout << i << "\n";
-    return 0;
+	for (int i = 1; i <= 10000; ++i)
+		if (i % a == 2)
+			cout << i << "\n";
+	return 0;
 }

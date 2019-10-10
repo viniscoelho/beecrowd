@@ -8,14 +8,17 @@
 
 using namespace std;
 
-int main(){
-	ios::sync_with_stdio(false);	
+int main()
+{
+	ios::sync_with_stdio(false);
 	double a;
 	int qtd = 0;
-	for ( int i = 0; i < 6; ++i ){
+	for (int i = 0; i < 6; ++i)
+	{
 		cin >> a;
-		if ( a >= 0 ) qtd++;
+		if (a >= 0)
+			qtd++;
 	}
 	cout << qtd << " valores positivos\n";
-    return 0;
+	return 0;
 }

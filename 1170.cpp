@@ -13,21 +13,25 @@ typedef long long int64;
 
 int resp;
 
-void days( double d, int n ){
-	if ( d > 1 ){
-		days(d/2, n+1);
+void days(double d, int n)
+{
+	if (d > 1)
+	{
+		days(d / 2, n + 1);
 		resp++;
 	}
 }
 
-int main(){
+int main()
+{
 	int a;
-    double b;
+	double b;
 	scanf("%d", &a);
-    while ( a-- ){
+	while (a--)
+	{
 		scanf("%lf", &b);
 		resp = 0, days(b, 0);
 		printf("%d dias\n", resp);
 	}
-    return 0;
+	return 0;
 }

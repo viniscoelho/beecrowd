@@ -17,7 +17,7 @@
 #define pb push_back
 #define MAXV 200100
 #define PI 3.14159
-#define TWOPI 2*PI
+#define TWOPI 2 * PI
 
 using namespace std;
 
@@ -30,20 +30,23 @@ int main()
 {
     ios::sync_with_stdio(false);
     int a, b, x;
-    while ( cin >> a >> b && a + b )
+    while (cin >> a >> b && a + b)
     {
         map<int, int> questions;
-        for ( int i = 0; i < a; i++ )
+        for (int i = 0; i < a; i++)
         {
             cin >> x;
-            if ( questions.count(x) ) questions[x]++;
-            else questions[x] = 1; 
+            if (questions.count(x))
+                questions[x]++;
+            else
+                questions[x] = 1;
         }
         map<int, int>::iterator mi;
         int resp = 0;
-        for ( mi = questions.begin(); mi != questions.end(); mi++ )
+        for (mi = questions.begin(); mi != questions.end(); mi++)
         {
-            if ( mi->second >= b ) resp++;
+            if (mi->second >= b)
+                resp++;
         }
         cout << resp << endl;
     }

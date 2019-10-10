@@ -10,14 +10,16 @@
 
 using namespace std;
 
-int main(){
-	ios::sync_with_stdio(false);	
+int main()
+{
+	ios::sync_with_stdio(false);
 	double i = 0, j = 1;
-	while ( i < 2 ){
+	while (i < 2)
+	{
 		cout << "I=" << i << " J=" << j << "\n";
-		cout << "I=" << i << " J=" << j+1 << "\n";
-		cout << "I=" << i << " J=" << j+2 << "\n";
+		cout << "I=" << i << " J=" << j + 1 << "\n";
+		cout << "I=" << i << " J=" << j + 2 << "\n";
 		i += 0.2, j += 0.2;
 	}
-    return 0;
+	return 0;
 }

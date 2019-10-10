@@ -25,7 +25,7 @@ typedef long long int64;
 
 typedef pair<int, string> is;
 
-int readInt ()
+int readInt()
 {
     bool minus = false;
     int result = 0;
@@ -33,37 +33,47 @@ int readInt ()
     ch = getchar_unlocked();
     while (true)
     {
-        if (ch == '-') break;
-        if (ch >= '0' && ch <= '9') break;
+        if (ch == '-')
+            break;
+        if (ch >= '0' && ch <= '9')
+            break;
         ch = getchar_unlocked();
     }
-    if (ch == '-') minus = true; else result = ch-'0';
+    if (ch == '-')
+        minus = true;
+    else
+        result = ch - '0';
     while (true)
     {
         ch = getchar_unlocked();
-        if (ch < '0' || ch > '9') break;
-        result = result*10 + (ch - '0');
+        if (ch < '0' || ch > '9')
+            break;
+        result = result * 10 + (ch - '0');
     }
-    if (minus) return -result;
-    else return result;
+    if (minus)
+        return -result;
+    else
+        return result;
 }
 
 int main()
 {
     int n, e;
     scanf("%d", &n);
-    while ( n-- )
+    while (n--)
     {
         scanf("%d", &e);
         unordered_set<string> lingua;
         string s;
-        for ( int i = 0; i < e; i++ )
+        for (int i = 0; i < e; i++)
         {
             cin >> s;
             lingua.insert(s);
         }
-        if ( lingua.size() > 1 ) cout << "ingles\n";
-        else cout << *lingua.begin() << endl;
+        if (lingua.size() > 1)
+            cout << "ingles\n";
+        else
+            cout << *lingua.begin() << endl;
     }
     return 0;
 }

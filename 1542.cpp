@@ -16,12 +16,12 @@ int main()
 {
     ios::sync_with_stdio(false);
     double q, d, p;
-    while ( cin >> q && q )
+    while (cin >> q && q)
     {
         cin >> d >> p;
-        int resp = abs((-(q*d)/(p-q))*p);
+        int resp = abs((-(q * d) / (p - q)) * p);
         cout << resp << ((resp > 1) ? " paginas" : " pagina") << "\n";
     }
-    
+
     return 0;
 }

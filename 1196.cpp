@@ -20,9 +20,9 @@
 #include <sstream>
 #include <utility>
 #include <tr1/unordered_map>
-#define FOR(i, a, b) for ( int i = a; i <= b; ++i )
-#define RFOR(i, b, a) for ( int i = b; i >= a; --i )
-#define REP(i, N) for ( int i = 0; i < N; ++i )
+#define FOR(i, a, b) for (int i = a; i <= b; ++i)
+#define RFOR(i, b, a) for (int i = b; i >= a; --i)
+#define REP(i, N) for (int i = 0; i < N; ++i)
 #define MAXN 10000
 #define pb push_back
 #define mp make_pair
@@ -30,14 +30,15 @@
 using namespace std;
 using namespace tr1;
 
-typedef vector <int> vi;
+typedef vector<int> vi;
 typedef pair<int, string> is;
 typedef pair<int, is> iis;
 typedef long long int64;
 typedef unsigned long long uint64;
 unordered_map<char, char> bib;
 
-int main(){	
+int main()
+{
 	ios::sync_with_stdio(false);
 	bib[' '] = ' ';
 	bib['/'] = '.';
@@ -87,8 +88,10 @@ int main(){
 	bib['2'] = '1';
 	bib['1'] = '`';
 	string a;
-	while ( getline(cin , a) ){
-		for ( int i = 0; i < a.size(); ++i ) cout << bib[a[i]];
+	while (getline(cin, a))
+	{
+		for (int i = 0; i < a.size(); ++i)
+			cout << bib[a[i]];
 		cout << "\n";
 	}
 	return 0;

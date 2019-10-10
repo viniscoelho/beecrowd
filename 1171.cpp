@@ -14,19 +14,22 @@ typedef pair<int, int> ii;
 
 const int INF = 0x3f3f3f3f;
 
-int main(){
-    ios::sync_with_stdio(false);
+int main()
+{
+	ios::sync_with_stdio(false);
 	int a, n;
-    map<int, int> num;
+	map<int, int> num;
 	map<int, int>::iterator it;
 	pair<map<int, int>::iterator, bool> ret;
 	cin >> n;
-	while ( n-- ){
+	while (n--)
+	{
 		cin >> a;
-		ret = num.insert( mp(a, 1) );
-		if ( !ret.second ) num[a]++;
+		ret = num.insert(mp(a, 1));
+		if (!ret.second)
+			num[a]++;
 	}
-	for ( it = num.begin(); it != num.end(); ++it )
+	for (it = num.begin(); it != num.end(); ++it)
 		cout << it->first << " aparece " << it->second << " vez(es)\n";
-    return 0;
+	return 0;
 }

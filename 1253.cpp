@@ -23,16 +23,20 @@ typedef unsigned long long int64;
 
 int b, n;
 
-int main(){
+int main()
+{
 	ios::sync_with_stdio(false);
 	cin >> n;
-	while ( n-- ){
+	while (n--)
+	{
 		string a;
 		cin >> a >> b;
-		for ( int i = 0; i < a.size(); ++i )
-			if ( int(a[i])-b < 65 ) cout << char(int(a[i])-b+26);
-			else cout << char(int(a[i])-b);
+		for (int i = 0; i < a.size(); ++i)
+			if (int(a[i]) - b < 65)
+				cout << char(int(a[i]) - b + 26);
+			else
+				cout << char(int(a[i]) - b);
 		cout << "\n";
 	}
-    return 0;
+	return 0;
 }

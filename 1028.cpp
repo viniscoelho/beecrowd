@@ -12,20 +12,24 @@
 
 using namespace std;
 
-int gcd(int a, int b){
+int gcd(int a, int b)
+{
 	return (b == 0) ? a : gcd(b, a % b);
 }
 
-int lcm(int a, int b){
-	return a*( b / gcd(a, b) );
+int lcm(int a, int b)
+{
+	return a * (b / gcd(a, b));
 }
 
-int main(){
+int main()
+{
 	int n, a, b;
 	scanf("%d", &n);
-	while ( n-- ){
+	while (n--)
+	{
 		scanf("%d %d", &a, &b);
 		printf("%d\n", gcd(a, b));
 	}
-    return 0;
+	return 0;
 }

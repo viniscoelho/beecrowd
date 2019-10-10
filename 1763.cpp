@@ -26,7 +26,7 @@ typedef long long int64;
 
 typedef pair<int, string> is;
 
-int readInt ()
+int readInt()
 {
     bool minus = false;
     int result = 0;
@@ -34,19 +34,27 @@ int readInt ()
     ch = getchar_unlocked();
     while (true)
     {
-        if (ch == '-') break;
-        if (ch >= '0' && ch <= '9') break;
+        if (ch == '-')
+            break;
+        if (ch >= '0' && ch <= '9')
+            break;
         ch = getchar_unlocked();
     }
-    if (ch == '-') minus = true; else result = ch-'0';
+    if (ch == '-')
+        minus = true;
+    else
+        result = ch - '0';
     while (true)
     {
         ch = getchar_unlocked();
-        if (ch < '0' || ch > '9') break;
-        result = result*10 + (ch - '0');
+        if (ch < '0' || ch > '9')
+            break;
+        result = result * 10 + (ch - '0');
     }
-    if (minus) return -result;
-    else return result;
+    if (minus)
+        return -result;
+    else
+        return result;
 }
 
 unordered_map<string, string> xmas;
@@ -79,16 +87,17 @@ void initialize()
     xmas["japao"] = "Merii Kurisumasu!";
 }
 
-
 int main()
 {
     ios::sync_with_stdio(false);
     initialize();
     string s;
-    while ( cin >> s )
+    while (cin >> s)
     {
-        if ( xmas.count(s) ) cout << xmas[s] << endl;
-        else cout << "--- NOT FOUND ---\n";
+        if (xmas.count(s))
+            cout << xmas[s] << endl;
+        else
+            cout << "--- NOT FOUND ---\n";
     }
     return 0;
 }

@@ -11,12 +11,16 @@
 
 using namespace std;
 
-int main(){
+int main()
+{
 	int n, a;
-	for ( int i = 0; i < 10; ++i ){
+	for (int i = 0; i < 10; ++i)
+	{
 		scanf("%d", &n);
-		if ( n <= 0 ) printf("X[%d] = 1\n", i);
-		else printf("X[%d] = %d\n", i, n);
+		if (n <= 0)
+			printf("X[%d] = 1\n", i);
+		else
+			printf("X[%d] = %d\n", i, n);
 	}
-    return 0;
+	return 0;
 }

@@ -23,9 +23,9 @@
 #include <sstream>
 #include <utility>
 #include <tr1/unordered_map>
-#define FOR(i, a, b) for( int i = a; i <= b; ++i )
-#define RFOR(i, b, a) for( int i = b; i >= a; --i )
-#define REP(i, N) for( int i = 0; i < N; ++i )
+#define FOR(i, a, b) for (int i = a; i <= b; ++i)
+#define RFOR(i, b, a) for (int i = b; i >= a; --i)
+#define REP(i, N) for (int i = 0; i < N; ++i)
 #define MAX 110
 #define pb push_back
 #define mp make_pair
@@ -40,11 +40,13 @@ const double INF = 1e50;
 typedef long long ll;
 typedef pair<double, double> dd;
 
-int main(){
+int main()
+{
 	ios::sync_with_stdio(false);
 	int a, b;
-	while ( cin >> a >> b && a+b ){
-		cout << a+b << "\n";
+	while (cin >> a >> b && a + b)
+	{
+		cout << a + b << "\n";
 	}
 	return 0;
 }

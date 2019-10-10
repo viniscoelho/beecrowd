@@ -9,12 +9,14 @@
 
 using namespace std;
 
-int main(){
-	ios::sync_with_stdio(false);	
+int main()
+{
+	ios::sync_with_stdio(false);
 	int a;
 	cin >> a;
-	if ( a % 2 == 0 ) a++;
-	for ( int i = a, j = 0; j < 6; i += 2, j++ )
+	if (a % 2 == 0)
+		a++;
+	for (int i = a, j = 0; j < 6; i += 2, j++)
 		cout << i << "\n";
-    return 0;
+	return 0;
 }

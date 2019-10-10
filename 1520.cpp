@@ -29,22 +29,25 @@ int main()
 {
     ios::sync_with_stdio(false);
     int n, m, a, b;
-    while ( cin >> n )
+    while (cin >> n)
     {
         vector<int> screws;
-        for ( int i = 0; i < n; i++ )
+        for (int i = 0; i < n; i++)
         {
             cin >> a >> b;
-            for ( int j = a; j <= b; j++ ) screws.pb(j);
+            for (int j = a; j <= b; j++)
+                screws.pb(j);
         }
         sort(screws.begin(), screws.end());
         cin >> m;
         vector<int>::iterator lo = lower_bound(screws.begin(), screws.end(), m);
         vector<int>::iterator hi = upper_bound(screws.begin(), screws.end(), m);
         hi--;
-        int last = (int)(hi-screws.begin());
-        if ( lo == screws.end() || screws[last] != m ) cout << m << " not found\n";
-        else cout << m << " found from " << (lo-screws.begin()) << " to " << (hi-screws.begin()) << endl; 
+        int last = (int)(hi - screws.begin());
+        if (lo == screws.end() || screws[last] != m)
+            cout << m << " not found\n";
+        else
+            cout << m << " found from " << (lo - screws.begin()) << " to " << (hi - screws.begin()) << endl;
     }
     return 0;
 }

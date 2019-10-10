@@ -10,12 +10,15 @@
 
 using namespace std;
 
-int main(){
+int main()
+{
     ios::sync_with_stdio(false);
     int x, z, sum = 0, c = 0;
     cin >> x >> z;
-    while ( x >= z ) cin >> z;
-    while ( sum < z ){
+    while (x >= z)
+        cin >> z;
+    while (sum < z)
+    {
         sum += x;
         c++, x++;
     }

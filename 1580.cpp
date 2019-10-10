@@ -17,8 +17,9 @@
 #define mp make_pair
 #define pb push_back
 #define MOD 1000000007LL
-#define SSTR( x ) dynamic_cast< std::ostringstream & >( \
-        ( std::ostringstream() << std::dec << x ) ).str()
+#define SSTR(x) dynamic_cast<std::ostringstream &>(          \
+                    (std::ostringstream() << std::dec << x)) \
+                    .str()
 
 using namespace std;
 
@@ -34,9 +35,11 @@ int64 fastPow(int64 a, int64 b)
     {
         if (b & 1LL)
         {
-            res *= a; res %= MOD;
+            res *= a;
+            res %= MOD;
         }
-        a *= a; a %= MOD;
+        a *= a;
+        a %= MOD;
         b >>= 1;
     }
     return res;
@@ -49,7 +52,7 @@ int64 fastPow(int64 a, int64 b)
 
 long long InverseEuler(int64 n)
 {
-    return fastPow(n, MOD-2LL);
+    return fastPow(n, MOD - 2LL);
 }
 
 /*
@@ -64,28 +67,31 @@ long long InverseEuler(int64 n)
 int main()
 {
     int t, n, r;
-    for ( int i = 2; i < 1010; i++ ) fat[i] = (fat[i-1]*i) % MOD;
+    for (int i = 2; i < 1010; i++)
+        fat[i] = (fat[i - 1] * i) % MOD;
     string s;
-    while ( cin >> s )
+    while (cin >> s)
     {
         int64 n = fat[s.size()];
-        
+
         int tam = s.size();
         unordered_map<char, int> letters;
-        for ( int i = 0; i < tam; i++ )
+        for (int i = 0; i < tam; i++)
         {
-            if ( letters.count(s[i]) ) letters[s[i]]++;
-            else letters.insert(mp(s[i], 1));
+            if (letters.count(s[i]))
+                letters[s[i]]++;
+            else
+                letters.insert(mp(s[i], 1));
         }
 
         int64 r = 1;
         unordered_map<char, int>::iterator it;
-        for ( it = letters.begin(); it != letters.end(); it++ )
+        for (it = letters.begin(); it != letters.end(); it++)
         {
             r = (r * fat[it->second]) % MOD;
         }
 
         int64 k = InverseEuler(r);
-        printf("%lld\n", (n*k) % MOD);
+        printf("%lld\n", (n * k) % MOD);
     }
 }

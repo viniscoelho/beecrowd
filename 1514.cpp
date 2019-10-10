@@ -21,9 +21,9 @@
 #include <iomanip>
 #include <sstream>
 #include <utility>
-#define FOR(i, a, b) for( int i = a; i <= b; ++i )
-#define RFOR(i, b, a) for( int i = b; i >= a; --i )
-#define REP(i, N) for( int i = 0; i < N; ++i )
+#define FOR(i, a, b) for (int i = a; i <= b; ++i)
+#define RFOR(i, b, a) for (int i = b; i >= a; --i)
+#define REP(i, N) for (int i = 0; i < N; ++i)
 #define MAX 110
 #define pb push_back
 #define mp make_pair
@@ -48,19 +48,27 @@ int readInt()
     char ch = getchar_unlocked();
     while (true)
     {
-        if (ch == '-') break;
-        if (ch >= '0' && ch <= '9') break;
+        if (ch == '-')
+            break;
+        if (ch >= '0' && ch <= '9')
+            break;
         ch = getchar_unlocked();
     }
-    if (ch == '-') minus = true; else result = ch-'0';
+    if (ch == '-')
+        minus = true;
+    else
+        result = ch - '0';
     while (true)
     {
         ch = getchar_unlocked();
-        if (ch < '0' || ch > '9') break;
-        result = result*10 + (ch - '0');
+        if (ch < '0' || ch > '9')
+            break;
+        result = result * 10 + (ch - '0');
     }
-    if (minus) return -result;
-    else return result;
+    if (minus)
+        return -result;
+    else
+        return result;
 }
 
 int matrix[MAX][MAX];
@@ -68,34 +76,36 @@ int matrix[MAX][MAX];
 int main()
 {
     int m, n;
-    while ( scanf("%d %d", &m, &n) && m+n )
+    while (scanf("%d %d", &m, &n) && m + n)
     {
         int cond[] = {1, 1, 1, 1};
-        
-        for ( int i = 0; i < m; i++ )
+
+        for (int i = 0; i < m; i++)
         {
             int a = 0, b = 0;
-            for ( int j = 0; j < n; j++ )
+            for (int j = 0; j < n; j++)
             {
                 matrix[i][j] = readInt();
                 a += matrix[i][j];
                 b |= matrix[i][j];
             }
-            if ( a-n == 0 ) cond[0] = 0;
+            if (a - n == 0)
+                cond[0] = 0;
             cond[3] &= b;
         }
-        for ( int j = 0; j < n; j++ )
+        for (int j = 0; j < n; j++)
         {
             int a = 0, b = 1;
-            for ( int i = 0; i < m; i++ )
+            for (int i = 0; i < m; i++)
             {
                 a |= matrix[i][j];
                 b &= matrix[i][j];
             }
             cond[1] &= a;
-            if ( b ) cond[2] = 0;
+            if (b)
+                cond[2] = 0;
         }
-        printf("%d\n", cond[0]+cond[1]+cond[2]+cond[3]);
+        printf("%d\n", cond[0] + cond[1] + cond[2] + cond[3]);
     }
     return 0;
 }

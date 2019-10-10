@@ -2,7 +2,7 @@
 	Resolucao:
 		Algoritmo que simula e gera o numero minimo de swaps necessarios
 		para ordenar um array de numeros. Complexidade O(n)
-		Se for par, Carlos ganha; senão Marcelo ganha
+		Se for par, Carlos ganha; senï¿½o Marcelo ganha
 */
 
 #include <iostream>
@@ -27,26 +27,33 @@ typedef pair<int, int> ii;
 
 int number[MAXV], pos[MAXV];
 
-int main(){
+int main()
+{
 	ios::sync_with_stdio(false);
 	int a, n;
-	while ( cin >> n && n ){
+	while (cin >> n && n)
+	{
 		int qtd = 0;
-		for ( int i = 0; i < n; i++ ){
+		for (int i = 0; i < n; i++)
+		{
 			cin >> a;
-			number[i] = a-1;
-			pos[a-1] = i;
+			number[i] = a - 1;
+			pos[a - 1] = i;
 		}
-		for ( int i = 0; i < n; i++ ){
-			if ( number[i] != i ){
+		for (int i = 0; i < n; i++)
+		{
+			if (number[i] != i)
+			{
 				number[pos[i]] = number[i];
 				pos[number[i]] = pos[i];
 				number[i] = pos[i] = i;
 				qtd++;
 			}
 		}
-		if ( qtd % 2 == 0 ) cout << "Carlos\n";
-		else cout << "Marcelo\n";
+		if (qtd % 2 == 0)
+			cout << "Carlos\n";
+		else
+			cout << "Marcelo\n";
 	}
 	return 0;
 }

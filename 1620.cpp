@@ -19,11 +19,10 @@ int main()
 {
 	ios::sync_with_stdio(false);
 	long double a;
-	while ( cin >> a && a )
+	while (cin >> a && a)
 	{
-		long double an = 3.0 + (a-2.0-1.0)*2.0;
-		cout << fixed << setprecision(6) << (an-a)/a << endl;
-
+		long double an = 3.0 + (a - 2.0 - 1.0) * 2.0;
+		cout << fixed << setprecision(6) << (an - a) / a << endl;
 	}
 	return 0;
 }

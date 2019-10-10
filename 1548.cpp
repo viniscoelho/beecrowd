@@ -30,20 +30,21 @@ int main()
     ios::sync_with_stdio(false);
     int m, n, a;
     cin >> m;
-    while ( m-- )
+    while (m--)
     {
         int qtd = 0;
         cin >> n;
         vector<ii> pos, orig(n);
-        for ( int i = 0; i < n; i++ )
+        for (int i = 0; i < n; i++)
         {
             cin >> orig[i].first;
             orig[i].second = i;
             pos.pb(orig[i]);
         }
         sort(pos.begin(), pos.end(), greater<ii>());
-        for ( int i = 0; i < n; i++ )
-            if ( pos[i].second == orig[i].second ) qtd++;
+        for (int i = 0; i < n; i++)
+            if (pos[i].second == orig[i].second)
+                qtd++;
         cout << qtd << "\n";
     }
     return 0;

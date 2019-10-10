@@ -13,17 +13,20 @@
 using namespace std;
 typedef long long int64;
 
-int main(){
+int main()
+{
 	int a, b, i = 0, menor = INF, pos = 0;
 	scanf("%d", &a);
-	while ( a-- ){
+	while (a--)
+	{
 		scanf("%d", &b);
-		if ( b < menor ){
+		if (b < menor)
+		{
 			menor = b;
 			pos = i;
 		}
 		i++;
 	}
 	printf("Menor valor: %d\nPosicao: %d\n", menor, pos);
-    return 0;
+	return 0;
 }

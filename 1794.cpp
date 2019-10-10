@@ -20,13 +20,15 @@ typedef vector<int> vi;
 typedef pair<int, int> ii;
 typedef long long int64;
 
-int main(){
+int main()
+{
     ios::sync_with_stdio(false);
     int a, b, c, d, n;
     cin >> n;
     cin >> a >> b;
     cin >> c >> d;
-    if ( (n >= a && n <= b) && (n >= c && n <= d) )
+    if ((n >= a && n <= b) && (n >= c && n <= d))
         cout << "possivel\n";
-    else cout << "impossivel\n";
+    else
+        cout << "impossivel\n";
 }

@@ -17,7 +17,7 @@
 #define pb push_back
 #define MAXV 200100
 #define PI 3.14159
-#define TWOPI 2*PI
+#define TWOPI 2 * PI
 
 using namespace std;
 
@@ -31,15 +31,15 @@ int main()
     ios::sync_with_stdio(false);
     int n;
     cin >> n;
-    while ( n-- )
+    while (n--)
     {
         double a, b, c, d;
         cin >> a >> b >> c >> d;
-        double ans = trunc(((d-b)/(c-a))*100)/100;
+        double ans = trunc(((d - b) / (c - a)) * 100) / 100;
         ostringstream buffer;
         buffer << fixed << setprecision(2) << ans;
         string pA = buffer.str();
-        pA[pA.size()-3] = ',';
+        pA[pA.size() - 3] = ',';
         cout << pA << endl;
     }
     return 0;

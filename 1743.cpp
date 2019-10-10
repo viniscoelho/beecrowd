@@ -17,7 +17,7 @@
 #define pb push_back
 #define MAXV 200100
 #define PI 3.14159
-#define TWOPI 2*PI
+#define TWOPI 2 * PI
 
 using namespace std;
 
@@ -32,16 +32,17 @@ int main()
     vector<int> plug;
     int n;
     bool resp = true;
-    for ( int i = 0; i < 5; i++ )
+    for (int i = 0; i < 5; i++)
     {
         cin >> n;
         plug.pb(n);
     }
-    for ( int i = 0; i < 5; i++ )
+    for (int i = 0; i < 5; i++)
     {
         cin >> n;
-        if ( n == plug[i] ) resp = false;
+        if (n == plug[i])
+            resp = false;
     }
-    cout << ((resp) ? "Y\n" : "N\n"); 
+    cout << ((resp) ? "Y\n" : "N\n");
     return 0;
 }

@@ -25,20 +25,25 @@ typedef pair<int, int> ii;
 
 int number[MAXV], posicao[MAXV];
 
-int main(){
+int main()
+{
 	ios::sync_with_stdio(false);
 	int m, n, a;
 	cin >> m;
-	while ( m-- ){
+	while (m--)
+	{
 		int qtd = 0;
 		cin >> n;
-		for ( int i = 0; i < n; i++ ){
+		for (int i = 0; i < n; i++)
+		{
 			cin >> a;
-			number[i] = a-1;
-			posicao[a-1] = i;
+			number[i] = a - 1;
+			posicao[a - 1] = i;
 		}
-		for ( int i = 0; i < n; i++ ){
-			if ( number[i] != i ){
+		for (int i = 0; i < n; i++)
+		{
+			if (number[i] != i)
+			{
 				number[posicao[i]] = number[i];
 				posicao[number[i]] = posicao[i];
 				number[i] = posicao[i] = i;

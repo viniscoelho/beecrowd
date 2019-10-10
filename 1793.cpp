@@ -17,15 +17,17 @@ int main()
 {
     ios::sync_with_stdio(false);
     int k;
-    while ( cin >> k && k )
+    while (cin >> k && k)
     {
         int sum = 10, cur, act;
         cin >> cur;
-        for ( int i = 0; i < k-1; i++ )
+        for (int i = 0; i < k - 1; i++)
         {
             cin >> act;
-            if ( (act-cur) > 9 ) sum += 10;
-            else sum += (act-cur);
+            if ((act - cur) > 9)
+                sum += 10;
+            else
+                sum += (act - cur);
             cur = act;
         }
         cout << sum << endl;

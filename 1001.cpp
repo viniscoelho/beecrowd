@@ -13,11 +13,11 @@ using namespace std;
 typedef unsigned long long uint64;
 typedef pair<int, int> ii;
 
-int main(){
+int main()
+{
     ios::sync_with_stdio(false);
     int a, b;
     cin >> a >> b;
-    cout << "X = " << a+b << "\n";
+    cout << "X = " << a + b << "\n";
     return 0;
 }
-

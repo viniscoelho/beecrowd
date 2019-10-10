@@ -25,7 +25,7 @@ int main()
     int t;
     cin >> t;
     cin.ignore(1);
-    for ( int i = 1; i <= t; i++ )
+    for (int i = 1; i <= t; i++)
     {
         cout << "Instancia " << i << endl;
         string a, b, c;
@@ -34,32 +34,39 @@ int main()
         getline(cin, c);
         int cA = 0, cB = 0, tam = a.size();
         int minA = 10000, minB = 10000;
-        for ( int i = 0; i < tam; i++ )
+        for (int i = 0; i < tam; i++)
         {
-            if ( a[i] == b[i] && a[i] == c[i] )
+            if (a[i] == b[i] && a[i] == c[i])
             {
                 cA++, cB++;
             }
-            else if ( a[i] == b[i] && a[i] != c[i] )
+            else if (a[i] == b[i] && a[i] != c[i])
             {
                 cA++;
-                if ( minA != 10000 ) continue;
+                if (minA != 10000)
+                    continue;
                 minA = min(minA, 0);
-                minB = min(minB, i+1);
+                minB = min(minB, i + 1);
             }
-            else if ( a[i] != b[i] && a[i] == c[i] )
+            else if (a[i] != b[i] && a[i] == c[i])
             {
                 cB++;
-                if ( minB != 10000 ) continue;
-                minA = min(minA, i+1);
+                if (minB != 10000)
+                    continue;
+                minA = min(minA, i + 1);
                 minB = min(minB, 0);
             }
         }
-        if ( cA > cB ) cout << "time 1\n";
-        else if ( cA < cB ) cout << "time 2\n";
-        else if ( cA == cB && minA < minB ) cout << "time 1\n";
-        else if ( cA == cB && minA > minB ) cout << "time 2\n";
-        else cout << "empate\n";
+        if (cA > cB)
+            cout << "time 1\n";
+        else if (cA < cB)
+            cout << "time 2\n";
+        else if (cA == cB && minA < minB)
+            cout << "time 1\n";
+        else if (cA == cB && minA > minB)
+            cout << "time 2\n";
+        else
+            cout << "empate\n";
         cout << endl;
     }
     return 0;
